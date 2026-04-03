@@ -3,7 +3,6 @@ export class Produto {
     nome: string = "";
     descricao: string = "";
     preco: number = 0;
-    quantidade: number = 0;
     sku: string = "";
     categoria: string = "";
     keywords: string = "";

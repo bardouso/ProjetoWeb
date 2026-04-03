@@ -20,9 +20,10 @@ export class JogosComponent {
       "categoria": "Estratégia, Negociação, Tabuleiro",
       "descricao": "Um jogo de estratégia e negociação onde jogadores tentam dominar a ilha de Catan construindo assentamentos, cidades e estradas.",
       "preco": 150,
-      "quantidade": 5,
+      "min_jogadores": 3,
+      "max_jogadores": 4,
       "keywords": "estratégia, negociação, recursos, tabuleiro",
-      "fotos": [] // Deixando vazio para você colocar depois
+      "fotos": []
     },
     {
       "id": 2,
@@ -31,7 +32,8 @@ export class JogosComponent {
       "categoria": "Imaginação, Família, Cartas",
       "descricao": "Um jogo de cartas ilustradas onde a imaginação e a interpretação são as chaves para a vitória.",
       "preco": 120,
-      "quantidade": 3,
+      "min_jogadores": 3,
+      "max_jogadores": 6,
       "keywords": "imaginação, criatividade, interpretação, arte",
       "fotos": []
     },
@@ -42,9 +44,12 @@ export class JogosComponent {
       "categoria": "Família, Trens, Estratégia Leve",
       "descricao": "Construa suas rotas ferroviárias através da América do Norte para conectar cidades e completar seus bilhetes de destino.",
       "preco": 200,
-      "quantidade": 4,
+      "min_jogadores": 2,
+      "max_jogadores": 5,
       "keywords": "trem, rotas, objetivos, família",
-      "fotos": []
+      "fotos": [
+        "Imagens dos Jogos/Ticket To Ride/1.jpg",
+      ]
     },
     {
       "id": 4,
@@ -53,7 +58,8 @@ export class JogosComponent {
       "categoria": "Blefe, Party Game, Rápido",
       "descricao": "Em um futuro próximo, você deve usar blefe e estratégia política para eliminar a influência de seus rivais.",
       "preco": 80,
-      "quantidade": 10,
+      "min_jogadores": 2,
+      "max_jogadores": 6,
       "keywords": "blefe, cartas, rápido, política",
       "fotos": []
     },
@@ -64,7 +70,8 @@ export class JogosComponent {
       "categoria": "RPG, Humor, Cartas",
       "descricao": "Mate os monstros, roube o tesouro e apunhalte seus amigos neste RPG satírico cheio de humor.",
       "preco": 100,
-      "quantidade": 6,
+      "min_jogadores": 3,
+      "max_jogadores": 6,
       "keywords": "rpg, humor, monstros, traição",
       "fotos": []
     },
@@ -75,7 +82,8 @@ export class JogosComponent {
       "categoria": "Traidor, Blefe, Mineração",
       "descricao": "Os anões buscam ouro na mina, mas cuidado: um deles pode ser o sabotador tentando impedir o progresso.",
       "preco": 70,
-      "quantidade": 8,
+      "min_jogadores": 3,
+      "max_jogadores": 10,
       "keywords": "sabotador, mineração, equipe, traidor",
       "fotos": []
     },
@@ -86,7 +94,8 @@ export class JogosComponent {
       "categoria": "Party Game, Caótico, Cartas",
       "descricao": "Uma versão altamente estratégica e movida a gatos da Roleta Russa.",
       "preco": 90,
-      "quantidade": 12,
+      "min_jogadores": 2,
+      "max_jogadores": 5,
       "keywords": "gatos, explosão, cartas, rápido",
       "fotos": []
     },
@@ -97,7 +106,8 @@ export class JogosComponent {
       "categoria": "Cooperativo, Estratégia, Sobrevivência",
       "descricao": "Trabalhem juntos como uma equipe de especialistas para erradicar quatro doenças que ameaçam o mundo.",
       "preco": 180,
-      "quantidade": 4,
+      "min_jogadores": 2,
+      "max_jogadores": 4,
       "keywords": "cooperativo, doenças, global, estratégia",
       "fotos": []
     },
@@ -108,7 +118,8 @@ export class JogosComponent {
       "categoria": "Estratégia Pesada, Econômico, Industrial",
       "descricao": "Um jogo de estratégia econômica que conta a história de empreendedores em Birmingham durante a revolução industrial.",
       "preco": 350,
-      "quantidade": 2,
+      "min_jogadores": 2,
+      "max_jogadores": 4,
       "keywords": "economia, industrial, avançado, pesado",
       "fotos": []
     },
@@ -119,7 +130,8 @@ export class JogosComponent {
       "categoria": "Abstrato, Estratégia, Peças",
       "descricao": "Um jogo de estratégia abstrata onde você deve colocar todas as suas peças no tabuleiro enquanto bloqueia seus oponentes.",
       "preco": 110,
-      "quantidade": 7,
+      "min_jogadores": 2,
+      "max_jogadores": 4,
       "keywords": "peças, formas, bloqueio, abstrato",
       "fotos": []
     }
