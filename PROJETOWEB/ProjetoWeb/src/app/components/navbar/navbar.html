@@ -1,0 +1,27 @@
+<!-- TOPO -->
+<header class="topbar">
+  <div class="brand">
+    <div class="brand" routerLink="/home" style="cursor: pointer;">
+      <div class="logo">
+        <img src="android-chrome-192x192.png" width="150px" alt="Logo Ludosfera" />
+      </div>
+      <div class="brand-text">
+        <h1>Ludos Luderia</h1>
+        <p>Loja de jogos de tabuleiro</p>
+      </div>
+    </div>
+  </div>
+
+  <nav class="menu">
+    <!-- BOTÃO DINÂMICO: Só aparece se não for a Home -->
+    @if (isNotHome()) {
+      <button type="button" routerLink="/home" style="cursor: pointer;">
+        🏠 Início
+      </button>
+    }
+
+    <button type="button" routerLink="/jogos" style="cursor: pointer;">Jogos</button>
+    <button type="button" routerLink="/portal" style="cursor: pointer;">Portal do Cliente</button>
+    <button type="button" class="cart-button" routerLink="/carrinho" style="cursor: pointer;">🛒 Carrinho</button>
+  </nav>
+</header>

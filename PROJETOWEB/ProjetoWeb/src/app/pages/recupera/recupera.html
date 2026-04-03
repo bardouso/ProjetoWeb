@@ -1,0 +1,11 @@
+@if (mensagem.length) {
+  <div class="alert alert-success">
+    {{ mensagem }}
+  </div>
+}
+email:
+<input type="email" [(ngModel)]="obj.email" class="form-control">
+<br><br>
+<button class="btn btn-success" (click)="recuperaSenha()">
+    Recuperar Senha
+</button>

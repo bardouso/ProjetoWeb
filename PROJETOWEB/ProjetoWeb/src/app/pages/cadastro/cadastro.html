@@ -1,0 +1,20 @@
+<div class="alert alerto-sucess" *ngIf="mensagem.length>0">{{mensagem}}
+    </div>
+dados do cliente **
+
+<div class="form-label">nome:</div>
+<input type="text" class="form-control" [(ngModel)]="obj.nome"> <br>
+
+<div class="form-label">email:</div>
+<input type="text" class="form-control" [(ngModel)]="obj.email"> <br>
+
+<div class="form-label">documento:</div>
+<input type="text" class="form-control" [(ngModel)]="obj.documento"> <br>
+
+<div class="form-label">senha:</div>
+<input type="text" class="form-control" [(ngModel)]="obj.senha"> <br>
+
+<div class="form-label">Endereco:</div>
+<textarea type="text" class="form-control" [(ngModel)]="obj.logradouro"></textarea>
+
+<button class="btn btn-sucess" (click)="cadastrar();">Atualizar</button>

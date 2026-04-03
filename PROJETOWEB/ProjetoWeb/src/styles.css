@@ -1,0 +1,38 @@
+/* RESET E FUNDO GLOBAL */
+body, html {
+  margin: 0; padding: 0; width: 100%; min-height: 100vh;
+  background: #0f1021;
+  background: radial-gradient(circle at top left, rgba(255, 0, 128, 0.18), transparent 25%),
+              radial-gradient(circle at bottom right, rgba(0, 200, 255, 0.18), transparent 25%),
+              linear-gradient(135deg, #0f1021, #1b1f3b, #2b1d52);
+  background-attachment: fixed;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* BOTÕES PADRONIZADOS (Funciona na Home, Navbar e Footer) */
+.btn, button {
+  border: none; cursor: pointer; padding: 12px 20px; border-radius: 14px;
+  font-weight: 700; color: white; transition: 0.3s ease;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.btn:hover, button:hover { transform: translateY(-2px); filter: brightness(1.1); }
+
+.primary { background: linear-gradient(135deg, #ff4ecd, #7a5cff); box-shadow: 0 8px 20px rgba(255, 78, 205, 0.3); }
+.secondary { background: linear-gradient(135deg, #00d4ff, #3b82f6); box-shadow: 0 8px 20px rgba(0, 212, 255, 0.2); }
+.outline { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.2); }
+
+/* INPUTS (Corrige a textbox feia) */
+input[type="text"] {
+  background: rgba(255, 255, 255, 0.9);
+  border: none; outline: none; padding: 14px 18px;
+  border-radius: 14px; font-size: 1rem; color: #1b1f3b;
+}
+
+/* GRIDS GERAIS (Evita que as caixas grudem) */
+.cards-grid, .highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px; /* O segredo para as caixas não encostarem */
+  margin: 20px 0;
+}

@@ -1,0 +1,21 @@
+<h2>Catálogo de Jogos</h2>
+
+<div class="cards-grid">
+
+  <div class="game-card" *ngFor="let jogo of jogos">
+
+    <h3>{{ jogo.nome }}</h3>
+
+    <p>{{ jogo.descricao }}</p>
+
+    <strong>R$ {{ jogo.preco }}</strong>
+
+    <br><br>
+
+    <button [routerLink]="['/catalogo', jogo.id]">
+      Ver detalhes
+    </button>
+
+  </div>
+
+</div>

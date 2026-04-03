@@ -1,0 +1,59 @@
+.topbar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 24px;
+  margin: 24px 40px 0; /* Padding lateral igual ao da home */
+  border-radius: 18px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.brand { display: flex; align-items: center; gap: 14px; }
+
+.logo {
+  width: 150px; 
+  height: 150px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  font-size: 50px; 
+  background: transparent; 
+  box-shadow: none; 
+}
+
+.brand-text h1 { margin: 0; font-size: 1.5rem; }
+.brand-text p { margin: 4px 0 0; color: #d9deff; font-size: 0.95rem; }
+
+.menu { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.cart-button {
+  background: linear-gradient(135deg, #00d4ff, #3b82f6) !important;
+}
+
+/* Isso vai afetar os textos e os botões dentro do seu menu */
+.menu button {
+  border: none; cursor: pointer; padding: 10px 14px;
+  border-radius: 12px; font-weight: 700; color: #ffffff;
+  color: #00A3FF; /* O azul da foto */
+  transition: color 0.3s ease; /* Faz a mudança de cor ser suave */
+  background: rgba(255, 255, 255, 0.08); transition: 0.3s ease;
+  border: none;
+}
+
+/* Efeito quando passa o mouse por cima */
+.menu button:hover {
+  color: #FFFFFF; /* Fica branco */
+  cursor: pointer;
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Se você quiser que o título da marca também mude no hover */
+.brand-container:hover .brand-text h1 {
+  color: #FFFFFF;
+}

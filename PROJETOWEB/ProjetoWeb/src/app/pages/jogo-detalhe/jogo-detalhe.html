@@ -1,0 +1,46 @@
+<div class="container mt-5">
+  <div class="row">
+    
+    <!-- LADO ESQUERDO: GALERIA -->
+    <div class="col-sm-12 col-md-6 text-center">
+      <div class="foto-principal-moldura">
+        <!-- Foto principal muda conforme o indiceFoto -->
+        <img [src]="obj.fotos[indiceFoto]" class="img-fluid main-img">
+      </div>
+
+      <!-- Controles da Galeria (Setinhas e Miniaturas) -->
+      <div class="d-flex align-items-center justify-content-center mt-3">
+        <button class="btn-seta" (click)="mudarFoto(-1)">‹</button>
+        
+        <div class="miniaturas-container d-flex mx-2">
+          @for (foto of obj.fotos; track $index) {
+            <img [src]="foto" 
+                 class="img-miniatura" 
+                 [class.ativa]="$index === indiceFoto"
+                 (click)="indiceFoto = $index">
+          }
+        </div>
+
+        <button class="btn-seta" (click)="mudarFoto(1)">›</button>
+      </div>
+    </div>
+
+    <!-- LADO DIREITO: INFORMAÇÕES -->
+    <div class="col-sm-12 col-md-6">
+      <h1 class="titulo-jogo">{{obj.nome}}</h1>
+      <p class="sku-texto">SKU: 000{{obj.id}}LUDO</p>
+      
+      <div class="categoria-box mt-3">
+        <strong>Categoria:</strong> Tabuleiro, Estratégia, Família
+      </div>
+
+      <div class="preco-container mt-4">
+        <span class="preco-por">por</span>
+        <h2 class="preco-valor">R$ 325,00</h2> <!-- Aqui você usaria {{obj.preco}} -->
+      </div>
+
+      <button class="btn-comprar-ludos mt-3" (click)="comprar()">COMPRAR</button>
+    </div>
+
+  </div>
+</div>
