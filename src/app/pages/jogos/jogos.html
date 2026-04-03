@@ -1,61 +1,39 @@
-<h2 class="mb-4">Catálogo de Jogos</h2>
-
-<div class="container">
+<div class="container mt-5">
   <div class="row">
-
     @for (obj of lista; track obj.id) {
-      <div class="col-md-3 col-sm-6 mb-4">
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-5">
+        
+        <div class="product-card">
 
-        <div class="card h-100 shadow-sm"
-             [routerLink]="['/jogo-detalhe', obj.id]"
-             style="cursor: pointer;">
+          <div class="img-wrapper">
+            <!-- Usando a primeira foto do array ou fallback se estiver vazio -->
+            <img [src]="obj.fotos[0] || 'assets/jogos/sem-foto.jpg'" class="img-fluid">
+          </div>
 
-          <img src="produto/{{obj.id}}.jpg"
-               class="card-img-top p-3"
-               style="height: 200px; object-fit: contain;">
+          <div class="product-info">
+            <h5 class="product-title">Jogo {{obj.nome}}</h5>
+            
+            <div class="price-and-button-row">
+              <div class="price-container">
+                <span class="price-main">R$ {{obj.preco | number:'1.2-2'}}</span>
+                
+                <div class="player-info">
+                  <img src="assets/icons/meeple.svg" class="meeple-icon">
+                  <span class="player-count">{{obj.min_jogadores}} - {{obj.max_jogadores}} Jogadores</span>
+                </div>
+              </div>
 
-          <div class="card-body text-center">
-            <h5 class="card-title">{{obj.nome}}</h5>
-            <p class="card-text">R$ {{obj.preco}}</p>
+              <div class="wrapper-btn-buy">
+                <button class="btn-buy" [routerLink]="['/jogo-detalhe', obj.id]">
+                  <span class="btn-text">Comprar</span>
+                  <span class="btn-icon">+</span>
+                </button>
+              </div>
+            </div>
           </div>
 
         </div>
-
       </div>
     }
-
   </div>
 </div>
-
-
-<!-- <h2>Catálogo de Jogos</h2>
-
-<div class="cards-grid">
-
-  @for (obj of lista; track obj.id) {
-    <article class="feature-card col-md-3 col-sm-12 col-xl-2" width="400px" routerLink="/jogo-detalhe/{{obj.id}}" style="cursor: pointer;">
-        <h4 class="card-title">{{obj.nome}}</h4>
-        <img src="produto_{{obj.id}}.jpg" class="card-img-top" 
-        width="150px" height="150px" (click)="(obj);"><br>
-
-    </article>
-}
-</div> -->
-
- <!-- <div class="game-card" *ngFor="let jogo of jogos">
-
-    <h3>{{ jogo.nome }}</h3>
-
-    <p>{{ jogo.descricao }}</p>
-
-    <strong>R$ {{ jogo.preco }}</strong>
-
-    <br><br>
-
-    <button [routerLink]="['/jogo', jogo.id]">
-      Ver detalhes
-    </button>
-
-  </div>
-
-</div> -->
