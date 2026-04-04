@@ -36,3 +36,17 @@ input[type="text"] {
   gap: 24px; /* O segredo para as caixas não encostarem */
   margin: 20px 0;
 }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased; /* Deixa a fonte mais nítida */
+}
+
+.product-title {
+  font-weight: 600; /* Um pouco menos que o preço para dar contraste */
+  letter-spacing: -0.5px; /* Deixa o título mais elegante */
+}
+
+.price-main {
+  font-weight: 800; /* Deixa o preço bem "pesado" e visível */
+}
