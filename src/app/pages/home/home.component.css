@@ -617,3 +617,39 @@
     font-size: 4.5rem;
   }
 }
+
+.d20-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  perspective: 1000px; /* Dá profundidade para a animação */
+}
+
+.d20-svg {
+  width: 60px;
+  height: 60px;
+  color: #00CCFF; /* Seu azul padrão */
+  filter: drop-shadow(0 0 10px rgba(0, 204, 255, 0.5)); /* Brilho neon */
+  
+  /* Chama a animação chamada 'girar-d20' */
+  animation: girar-d20 5s infinite linear;
+}
+
+/* Criando o movimento de giro */
+@keyframes girar-d20 {
+  0% {
+    transform: rotateY(0deg) rotateX(10deg);
+  }
+  50% {
+    transform: rotateY(180deg) rotateX(-10deg) scale(1.1); /* Dá uma leve aumentada no meio */
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(10deg);
+  }
+}
+
+/* Opcional: Se quiser que ele pare de girar quando passar o mouse */
+.d20-container:hover .d20-svg {
+  animation-play-state: paused;
+  cursor: pointer;
+}

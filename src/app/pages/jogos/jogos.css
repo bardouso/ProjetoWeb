@@ -9,13 +9,24 @@
 .img-wrapper {
   background: white;
   border-radius: 10px;
-  padding: 20px;
+  padding: 15px; /* Reduzi um pouco o padding para a imagem ganhar espaço */
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 250px;
+  
+  /* --- ALTERE AQUI --- */
+  height: 400px; /* Aumente este valor para a caixa ficar mais alta */
+  /* ------------------- */
+
   margin-bottom: 15px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  overflow: hidden; /* Garante que nada saia para fora da borda arredondada */
+}
+
+.img-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Isso garante que a foto não estique nem corte */
 }
 
 .badge-novidade {
@@ -76,4 +87,25 @@
 .btn-buy:hover {
   background-color: #c480e8 !important; /* Exemplo: muda para laranja só ao encostar no botão */
   transform: scale(1.05); /* Dá um leve aumento */
+}
+
+.player-info {
+  display: flex;
+  align-items: center; /* Alinha o bonequinho no meio da linha do texto */
+  gap: 5px;            /* Espaço pequeno entre ícone e texto */
+  margin-top: 2px;
+}
+
+.meeple-svg {
+  width: 14px;        /* Tamanho pequeno */
+  height: 14px;       /* Tamanho pequeno */
+  fill: #00CCFF;      /* A cor azul exata do seu preço */
+  flex-shrink: 0;     /* Impede que o bonequinho amasse */
+}
+
+.player-count {
+  font-size: 0.85rem;
+  color: #bdc3c7;     /* Cor cinza claro das letras */
+  font-weight: 500;
+  line-height: 1;     /* Ajusta a altura da linha para alinhar com o ícone */
 }

@@ -43,4 +43,43 @@
     </div>
 
   </div>
+
+
+  <div class="info-jogo-container">
+    <h2 class="sessao-titulo">INFORMAÇÕES DO JOGO</h2>
+    <hr class="sessao-linha">
+
+    <div class="detalhes-content">
+      <!-- Descrição principal -->
+      <p class="detalhe-longo">{{obj.detalhes_longos}}</p>
+
+      <!-- Lista de Componentes -->
+      <div class="sessao-componentes">
+        <h4 class="subtitulo-detalhe">Componentes:</h4>
+        <ul class="lista-componentes">
+          @for (item of obj.componentes; track $index) {
+            <li>{{item}}</li>
+          }
+        </ul>
+      </div>
+
+      <!-- Ficha Técnica (Especificações) -->
+      <div class="ficha-tecnica">
+        <p><strong>-Idade:</strong> {{obj.especificacoes.idade}}</p>
+        <p><strong>-Tempo:</strong> {{obj.especificacoes.tempo}}</p>
+        <p><strong>-Jogadores:</strong> {{obj.min_jogadores}} - {{obj.max_jogadores}}</p>
+        <p><strong>-Idioma:</strong> {{obj.especificacoes.idioma}}</p>
+        <p><strong>-Lançamento:</strong> {{obj.especificacoes.lancamento}}</p>
+        <p><strong>-Editora:</strong> {{obj.especificacoes.editora}}</p>
+        <p><strong>-Designer:</strong> {{obj.especificacoes.designer}}</p>
+        <p><strong>-Mecânicas:</strong> {{obj.especificacoes.mecanicas}}</p>
+        <p><strong>-Perfil do jogo:</strong> {{obj.especificacoes.perfil}}</p>
+
+      </div>
+
+      <hr class="sessao-linha">
+      <br>
+
+    </div>
+  </div>
 </div>

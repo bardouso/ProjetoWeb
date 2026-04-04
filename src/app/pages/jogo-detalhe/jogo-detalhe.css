@@ -56,3 +56,79 @@
   font-size: 3rem;
   margin: 0;
 }
+
+.info-jogo-container {
+  margin-top: 50px;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif; /* Aquela dica da fonte! */
+}
+
+.sessao-titulo {
+  font-weight: 800;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.sessao-linha {
+  border: 0;
+  height: 2px;
+  background: linear-gradient(to right, #00CCFF, transparent); /* Linha com degradê azul */
+  margin-bottom: 30px;
+  opacity: 1;
+}
+
+.detalhe-longo {
+  line-height: 1.8;
+  color: #d1d1d1;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.subtitulo-detalhe {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.lista-componentes {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 40px;
+}
+
+.lista-componentes li {
+  margin-bottom: 8px;
+  color: #d1d1d1;
+  position: relative;
+  padding-left: 20px;
+}
+
+/* Criando o pontinho da lista customizado */
+.lista-componentes li::before {
+  content: "•";
+  color: #00CCFF;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.ficha-tecnica {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ficha-tecnica p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #d1d1d1;
+}
+
+.ficha-tecnica strong {
+  color: #ffffff;
+  min-width: 100px;
+  display: inline-block;
+}
