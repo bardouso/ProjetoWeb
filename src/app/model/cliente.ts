@@ -5,4 +5,5 @@ export class Cliente {
     public documento:String="";
     public logradouro:String="";
     public senha:String="";;
+    public cpf:String="";
 }

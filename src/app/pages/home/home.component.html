@@ -20,16 +20,10 @@
         promoções e monte a experiência perfeita para sua próxima partida.
       </p>
 
-      <div class="hero-actions">
-        <button type="button" class="btn primary">Ver catálogo</button>
-        <button type="button" class="btn secondary">Como funciona o aluguel</button>
-      </div>
+    
 
       <div class="hero-stats">
-        <div class="stat-card">
-          <strong>+250</strong>
-          <span>Jogos disponíveis</span>
-        </div>
+       
 
         <div class="stat-card">
           <strong>+1.000</strong>
@@ -38,7 +32,7 @@
 
         <div class="stat-card">
           <strong>Fácil</strong>
-          <span>Compra e aluguel em um só lugar</span>
+          <span>Compra seus jogos em um só lugar</span>
         </div>
       </div>
     </div>
@@ -48,13 +42,24 @@
       <div class="floating-card card-2">🎉 Party Games</div>
       <div class="floating-card card-3">👨‍👩‍👧‍👦 Família</div>
 
-      <div class="d20-container">
+      <!--<div class="d20-container">
       <svg class="d20-svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
 
         <path d="M256 16L40 144v224l216 128 216-128V144L256 16zM88 168h336L256 448 88 168zM64 360V160l176 144L64 360zm192 120l-176-112 176-144v256zm192-120L272 304l176-144v200zm-16-216L256 48 80 144h360z" fill="currentColor"/>
         <text x="256" y="320" font-family="Arial" font-size="120" font-weight="bold" fill="currentColor" text-anchor="middle">20</text>
       </svg>
-    </div>
+    </div>-->
+
+    <div class="d20-container">
+  <div class="d20-3d">
+    <div class="d20-face front">1</div>
+    <div class="d20-face back">2</div>
+    <div class="d20-face right">3</div>
+    <div class="d20-face left">4</div>
+    <div class="d20-face top">5</div>
+    <div class="d20-face bottom">6</div>
+  </div>
+</div>
     </div>
   </section>
 
@@ -92,17 +97,17 @@
         <p>Revise produtos selecionados antes de finalizar sua compra.</p>
       </article>
 
-      <article class="feature-card" routerLink="/portal-cliente" style="cursor: pointer;">
+      <article class="feature-card" routerLink="/cadastro" style="cursor: pointer;">
         <div class="icon">👤</div>
         <h4>Portal do Cliente</h4>
         <p>Acompanhe pedidos, alugueis, favoritos e histórico de compras.</p>
       </article>
 
-      <article class="feature-card" routerLink="/promocoes" style="cursor: pointer;">
+      <!--<article class="feature-card" routerLink="/promocoes" style="cursor: pointer;">
         <div class="icon">🔥</div>
         <h4>Promoções</h4>
         <p>Veja ofertas, combos e descontos especiais da semana.</p>
-      </article>
+      </article>-->
 
     </div>
   </section>
@@ -119,21 +124,21 @@
         <span class="badge">Mais vendido</span>
         <h4>Catan</h4>
         <p>Estratégia, trocas e expansão de território em uma ilha cheia de desafios.</p>
-        <button type="button">Ver jogo</button>
+        <button type="button" class="btn-buy" [routerLink]="['/jogo-detalhe/:id', { id: '1' }]">Ver jogo</button>
       </article>
 
       <article class="game-card">
         <span class="badge">Favorito da galera</span>
         <h4>Dixit</h4>
         <p>Arte, criatividade e imaginação em uma experiência leve e divertida.</p>
-        <button type="button">Ver jogo</button>
+        <button type="button" class="btn-buy" [routerLink]="['/jogo-detalhe/:id', { id: '2' }]">Ver jogo</button>
       </article>
 
       <article class="game-card">
         <span class="badge">Ótimo para alugar</span>
         <h4>Ticket to Ride</h4>
         <p>Construa rotas, dispute caminhos e complete objetivos pelo mapa.</p>
-        <button type="button">Ver jogo</button>
+        <button type="button" class="btn-buy" [routerLink]="['/jogo-detalhe/:id', { id: '3' }]">Ver jogo</button>
       </article>
     </div>
   </section>
@@ -149,7 +154,7 @@
 
       <div class="cta-actions">
         <button type="button" class="btn primary">Explorar jogos</button>
-        <button type="button" class="btn outline">Entrar no portal</button>
+        <button type="button" class="btn outline" routerLink="/cadastro">Entrar no portal</button>
       </div>
     </div>
   </section>

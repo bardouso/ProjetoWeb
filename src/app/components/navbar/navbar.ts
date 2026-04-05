@@ -12,6 +12,15 @@ import { filter } from 'rxjs/operators';
 })
 export class NavbarComponent {
 
+    estaLogado() {
+    return localStorage.getItem("cliente") != null;
+  }
+
+  logout() {
+    localStorage.removeItem("cliente");
+    alert("Logout realizado");
+  }
+
 rotaAtual: string = '';
 
   constructor(private router: Router) {

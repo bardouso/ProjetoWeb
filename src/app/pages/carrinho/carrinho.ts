@@ -20,7 +20,7 @@ export class Carrinho {
   ngOnInit(){
     let json = localStorage.getItem("cesta");
     if(json == null){
-      this.mensagem = "Sua cesta está vazia!!!";
+      this.mensagem = "Seu carrinho está vazio!!!";
     } else {
       this.lista = JSON.parse(json);
       this.calculaTotal();
@@ -63,6 +63,6 @@ export class Carrinho {
     localStorage.removeItem("cesta");
     this.lista = [];
     this.total = 0;
-    this.mensagem = "Sua cesta está vazia!!!";
+    this.mensagem = "Seu carrinho está vazio!!!";
   }
 }

@@ -21,7 +21,13 @@
     }
 
     <button type="button" routerLink="/jogos" style="cursor: pointer;">Jogos</button>
-    <button type="button" routerLink="/portal" style="cursor: pointer;">Portal do Cliente</button>
+    <button type="button" routerLink="/cadastro" style="cursor: pointer;">Portal do Cliente</button>
     <button type="button" class="cart-button" routerLink="/carrinho" style="cursor: pointer;">🛒 Carrinho</button>
+
+    <button type="button" routerLink="/login" *ngIf="!estaLogado()">Login</button>
+
+    <button *ngIf="estaLogado()" (click)="logout()">
+      Logout
+    </button>
   </nav>
 </header>

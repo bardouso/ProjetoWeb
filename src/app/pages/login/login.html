@@ -23,3 +23,15 @@
 
     </div>
 </div> -->
+
+
+<div class="login-container">
+  <h2>Login</h2>
+
+  <input type="email" [(ngModel)]="email" placeholder="Email">
+  <input type="password" [(ngModel)]="senha" placeholder="Senha">
+
+  <button (click)="fazerLogin()">Entrar</button>
+
+  <p class="erro">{{mensagem}}</p>
+</div>

@@ -15,7 +15,7 @@ export class Cadastro {
 
   ngOnInit(){
     let json = localStorage.getItem("Cliente");
-    if (json=null){
+      if (json != null){
       this.obj = JSON.parse(json)
     };
   }

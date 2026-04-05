@@ -625,31 +625,80 @@
   perspective: 1000px; /* Dá profundidade para a animação */
 }
 
-.d20-svg {
-  width: 60px;
-  height: 60px;
+/*.d20-svg {
+  width: 400px;
+  height: 700px;
   color: #00CCFF; /* Seu azul padrão */
-  filter: drop-shadow(0 0 10px rgba(0, 204, 255, 0.5)); /* Brilho neon */
+ /* filter: drop-shadow(0 0 10px rgba(0, 204, 255, 0.5)); /* Brilho neon */
   
   /* Chama a animação chamada 'girar-d20' */
-  animation: girar-d20 5s infinite linear;
+ /* animation: girar-d20 5s infinite linear;
+}*/
+
+.d20-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+  height: 100%;
 }
 
-/* Criando o movimento de giro */
-@keyframes girar-d20 {
+/* OBJETO 3D */
+.d20-3d {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+
+  animation: rotateD20 8s infinite linear;
+}
+
+/* FACES */
+.d20-face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(0, 204, 255, 0.1);
+  border: 2px solid rgba(0, 204, 255, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 48px;
+  font-weight: bold;
+  color: #00ccff;
+
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 20px rgba(0, 204, 255, 0.3);
+}
+
+/* POSIÇÕES 3D */
+.front  { transform: rotateY(0deg) translateZ(100px); }
+.back   { transform: rotateY(180deg) translateZ(100px); }
+.right  { transform: rotateY(90deg) translateZ(100px); }
+.left   { transform: rotateY(-90deg) translateZ(100px); }
+.top    { transform: rotateX(90deg) translateZ(100px); }
+.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+/* ANIMAÇÃO REAL 3D */
+@keyframes rotateD20 {
   0% {
-    transform: rotateY(0deg) rotateX(10deg);
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   }
   50% {
-    transform: rotateY(180deg) rotateX(-10deg) scale(1.1); /* Dá uma leve aumentada no meio */
+    transform: rotateX(180deg) rotateY(180deg) rotateZ(90deg);
   }
   100% {
-    transform: rotateY(360deg) rotateX(10deg);
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(180deg);
   }
 }
 
-/* Opcional: Se quiser que ele pare de girar quando passar o mouse */
-.d20-container:hover .d20-svg {
+/* HOVER (fica top demais) */
+.d20-container:hover .d20-3d {
   animation-play-state: paused;
+  transform: scale(1.1) rotateX(20deg) rotateY(20deg);
   cursor: pointer;
 }
+
+
+/* Criando o movimento de giro */

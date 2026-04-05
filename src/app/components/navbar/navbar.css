@@ -32,7 +32,7 @@
 .menu { display: flex; flex-wrap: wrap; gap: 10px; }
 
 .cart-button {
-  background: linear-gradient(135deg, #00d4ff, #3b82f6) !important;
+  background: linear-gradient(135deg, #2d0081, #2f00ff) !important;
 }
 
 /* Isso vai afetar os textos e os botões dentro do seu menu */
@@ -57,3 +57,5 @@
 .brand-container:hover .brand-text h1 {
   color: #FFFFFF;
 }
+
+

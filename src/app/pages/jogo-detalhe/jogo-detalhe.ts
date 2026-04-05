@@ -20,7 +20,14 @@ export class JogoDetalheComponent {
   indiceFoto: number = 0; 
 
   comprar() {
-  let cesta: ItemCesta[] = [];
+  
+   const cliente = localStorage.getItem("cliente");
+
+  if (!cliente) {
+    alert("Você precisa fazer login!");
+    return;
+  }
+    let cesta: ItemCesta[] = [];
 
   let json = localStorage.getItem("cesta");
 
