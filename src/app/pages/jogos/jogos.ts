@@ -23,7 +23,11 @@ export class JogosComponent {
       "min_jogadores": 3,
       "max_jogadores": 4,
       "keywords": "estratégia, negociação, recursos, tabuleiro",
-      "fotos": [],
+      "fotos": [
+        "Imagens dos Jogos/Catan/1.jpg",
+        "Imagens dos Jogos/Catan/2.jpg",
+        "Imagens dos Jogos/Catan/3.jpg",
+      ],
       detalhes_longos: "Os jogadores são colonos tentando dominar a ilha de Catan. Construa estradas, assentamentos e cidades através da negociação de recursos como madeira, trigo e minério. Um clássico absoluto que revolucionou o mundo dos jogos de tabuleiro.",
       componentes: [
         "19 Hexágonos de terreno", "6 Peças de moldura", "95 Cartas de recurso", "Peças de madeira", "Dados"

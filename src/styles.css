@@ -10,17 +10,53 @@ body, html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.4;
+  filter: blur(10px);
+  animation: floatShape 10s ease-in-out infinite;
+  z-index: 0;
+}
+
+.shape-1 {
+  width: 220px;
+  height: 220px;
+  background: #c480e8;
+  top: -60px;
+  right: -30px;
+}
+
+.shape-2 {
+  width: 260px;
+  height: 260px;
+  background: #00d4ff;
+  left: -60px;
+  bottom: -70px;
+  animation-delay: 2s;
+}
+
+.shape-3 {
+  width: 260px;
+  height: 260px;
+  background: #edeff0;
+  left: -60px;
+  bottom: -70px;
+  animation-delay: 2s;
+}
+
 /* BOTÕES PADRONIZADOS (Funciona na Home, Navbar e Footer) */
 .btn, button {
   border: none; cursor: pointer; padding: 12px 20px; border-radius: 14px;
+  color: #c480e8;
   font-weight: 700; color: white; transition: 0.3s ease;
   display: inline-flex; align-items: center; justify-content: center;
 }
 .btn:hover, button:hover { transform: translateY(-2px); filter: brightness(1.1); }
 
-.primary { background: linear-gradient(135deg, #ff4ecd, #7a5cff); box-shadow: 0 8px 20px rgba(255, 78, 205, 0.3); }
-.secondary { background: linear-gradient(135deg, #00d4ff, #3b82f6); box-shadow: 0 8px 20px rgba(0, 212, 255, 0.2); }
-.outline { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.2); }
+.primary { background: linear-gradient(135deg, #c480e8); box-shadow: 0 8px 20px rgba(255, 78, 205, 0.3); gap: 20px;}
+.secondary { background: linear-gradient(135deg, #00d4ff, #3b82f6); box-shadow: 0 8px 20px rgba(0, 212, 255, 0.2);  }
+.outline { background: linear-gradient(135deg, #00CCFF); border: 1px solid rgba(255, 255, 255, 0.2); }
 
 /* INPUTS (Corrige a textbox feia) */
 input[type="text"] {
@@ -49,4 +85,91 @@ body {
 
 .price-main {
   font-weight: 800; /* Deixa o preço bem "pesado" e visível */
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr; /* Transforma as 2 colunas em 1 */
+    text-align: center;
+    gap: 40px;
+  }
+
+  .hero-text h2 {
+    font-size: 2.8rem; /* Diminui um pouco o título */
+  }
+
+  .hero-stats {
+    justify-content: center; /* Centraliza os stats */
+  }
+
+  .cards-grid, .highlight-grid {
+    grid-template-columns: repeat(2, 1fr); /* De 3 colunas para 2 */
+  }
+}
+
+/* Para Celulares (Telas menores que 768px) */
+@media (max-width: 768px) {
+  .hero-text h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  /* Faz os cards ocuparem a tela inteira (1 por linha) */
+  .cards-grid, .highlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ajuste do D20 no celular para não ficar gigante */
+  .d20-3d {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .d20-face {
+    width: 100px;
+    height: 100px;
+    font-size: 20px;
+  }
+
+  .front  { transform: rotateY(0deg) translateZ(50px); }
+  .back   { transform: rotateY(180deg) translateZ(50px); }
+  .right  { transform: rotateY(90deg) translateZ(50px); }
+  .left   { transform: rotateY(-90deg) translateZ(50px); }
+  .top    { transform: rotateX(90deg) translateZ(50px); }
+  .bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+  /* Ajuste na barra de busca */
+  .search-bar {
+    flex-direction: column;
+  }
+
+  .search-bar input, .search-bar button {
+    width: 100%;
+  }
+
+  .cta-box {
+    padding: 25px;
+  }
+
+  .cta-box h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Para Celulares Pequenos (Telas menores que 480px) */
+@media (max-width: 480px) {
+  .hero-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .stat-card {
+    min-width: 100%; /* Cada stat ocupa uma linha */
+  }
+  
+  .floating-card {
+    display: none; /* Esconde os cards flutuantes em telas muito pequenas para limpar o visual */
+  }
 }
