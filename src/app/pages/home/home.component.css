@@ -2,128 +2,15 @@
   display: block;
 }
 
+/* O container agora é transparente para mostrar o fundo do Body */
 .home-page {
   position: relative;
   min-height: 100vh;
-  overflow: hidden;
-  color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
-  background:
-    radial-gradient(circle at top left, rgba(255, 0, 128, 0.18), transparent 25%),
-    radial-gradient(circle at bottom right, rgba(0, 200, 255, 0.18), transparent 25%),
-    linear-gradient(135deg, #0f1021, #1b1f3b, #2b1d52);
-  padding: 24px 40px 40px;
+  padding: 100px;
   box-sizing: border-box;
 }
 
-/* Fundo decorativo */
-.bg-shape {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.4;
-  filter: blur(10px);
-  animation: floatShape 10s ease-in-out infinite;
-  z-index: 0;
-}
-
-.shape-1 {
-  width: 220px;
-  height: 220px;
-  background: #ff4ecd;
-  top: -60px;
-  right: -30px;
-}
-
-.shape-2 {
-  width: 260px;
-  height: 260px;
-  background: #00d4ff;
-  left: -60px;
-  bottom: -70px;
-  animation-delay: 2s;
-}
-
-.shape-3 {
-  width: 180px;
-  height: 180px;
-  background: #ffd166;
-  left: 45%;
-  top: 40%;
-  animation-delay: 4s;
-}
-
-/* Topo */
-.topbar {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  padding: 18px 24px;
-  margin-bottom: 32px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.logo {
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  background: linear-gradient(135deg, #ff4ecd, #7a5cff);
-  box-shadow: 0 10px 30px rgba(255, 78, 205, 0.35);
-}
-
-.brand-text h1 {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-.brand-text p {
-  margin: 4px 0 0;
-  color: #d9deff;
-  font-size: 0.95rem;
-}
-
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.menu button {
-  border: none;
-  cursor: pointer;
-  padding: 10px 14px;
-  border-radius: 12px;
-  font-weight: 700;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
-  transition: 0.3s ease;
-}
-
-.menu button:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.cart-button {
-  background: linear-gradient(135deg, #00d4ff, #3b82f6) !important;
-}
-
-/* Hero */
+/* Hero Section */
 .hero {
   position: relative;
   z-index: 2;
@@ -132,10 +19,6 @@
   gap: 30px;
   align-items: center;
   margin-bottom: 38px;
-}
-
-.hero-text {
-  padding: 12px 4px;
 }
 
 .tag {
@@ -155,7 +38,7 @@
 }
 
 .hero-text h2 span {
-  background: linear-gradient(90deg, #ff9de1, #7ad7ff, #ffe08a);
+  background: linear-gradient(90deg, #ff9de1, #7ad7ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -168,44 +51,6 @@
   color: #d8dcff;
   font-size: 1.05rem;
   line-height: 1.7;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-bottom: 26px;
-}
-
-.btn {
-  border: none;
-  cursor: pointer;
-  padding: 14px 20px;
-  border-radius: 14px;
-  font-weight: 700;
-  transition: 0.3s ease;
-}
-
-.btn:hover {
-  transform: translateY(-3px) scale(1.02);
-}
-
-.primary {
-  color: #ffffff;
-  background: linear-gradient(135deg, #ff4ecd, #7a5cff);
-  box-shadow: 0 12px 30px rgba(122, 92, 255, 0.35);
-}
-
-.secondary {
-  color: #ffffff;
-  background: linear-gradient(135deg, #00d4ff, #3b82f6);
-  box-shadow: 0 12px 30px rgba(0, 212, 255, 0.25);
-}
-
-.outline {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .hero-stats {
@@ -233,7 +78,7 @@
   font-size: 0.95rem;
 }
 
-/* Hero visual */
+/* Hero Visual (Onde fica o D20) */
 .hero-visual {
   position: relative;
   min-height: 420px;
@@ -242,55 +87,65 @@
   justify-content: center;
 }
 
-.main-circle {
-  width: 280px;
-  height: 280px;
-  padding: 8px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #ff4ecd, #7a5cff, #00d4ff);
-  box-shadow: 0 0 60px rgba(122, 92, 255, 0.35);
-  animation: pulseGlow 4s ease-in-out infinite;
-}
-
-.inner-circle {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: #14162e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 6rem;
-  animation: rotateIcon 8s linear infinite;
-}
-
 .floating-card {
   position: absolute;
-  padding: 14px 18px;
-  border-radius: 16px;
+  padding: 10px 16px;
+  border-radius: 12px;
   font-weight: 700;
+  font-size: 0.85rem;
   background: rgba(255, 255, 255, 0.10);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(8px);
+  z-index: 3;
 }
 
-.card-1 {
-  top: 40px;
-  left: 20px;
-  animation: floatCard 4s ease-in-out infinite;
+.card-1 { top: 40px; left: 20px; animation: floatCard 4s ease-in-out infinite; }
+.card-2 { top: 120px; right: 30px; animation: floatCard 5s ease-in-out infinite 0.8s; }
+.card-3 { bottom: 50px; left: 50px; animation: floatCard 4.5s ease-in-out infinite 1.2s; }
+
+/* D20 3D ANIMATION */
+.d20-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
 }
 
-.card-2 {
-  top: 120px;
-  right: 30px;
-  animation: floatCard 5s ease-in-out infinite 0.8s;
+.d20-3d {
+  width: 120px; /* Reduzi um pouco para não atropelar o texto */
+  height: 120px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateD20 12s infinite linear;
 }
 
-.card-3 {
-  bottom: 50px;
-  left: 50px;
-  animation: floatCard 4.5s ease-in-out infinite 1.2s;
+.d20-face {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: rgba(0, 204, 255, 0.15);
+  border: 1px solid rgba(0, 204, 255, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #00ccff;
+  backdrop-filter: blur(4px);
+  box-shadow: inset 0 0 15px rgba(0, 204, 255, 0.2);
+}
+
+/* Posições das faces 3D */
+.front  { transform: rotateY(0deg) translateZ(60px); }
+.back   { transform: rotateY(180deg) translateZ(60px); }
+.right  { transform: rotateY(90deg) translateZ(60px); }
+.left   { transform: rotateY(-90deg) translateZ(60px); }
+.top    { transform: rotateX(90deg) translateZ(60px); }
+.bottom { transform: rotateX(-90deg) translateZ(60px); }
+
+@keyframes rotateD20 {
+  from { transform: rotateX(0) rotateY(0) rotateZ(0); }
+  to { transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg); }
 }
 
 /* Busca */
@@ -308,397 +163,90 @@
   backdrop-filter: blur(10px);
 }
 
-.search-box h3 {
-  margin: 0 0 18px;
-  font-size: 1.5rem;
-}
-
 .search-bar {
   display: flex;
-  flex-wrap: wrap;
   gap: 12px;
 }
 
 .search-bar input {
   flex: 1;
-  min-width: 240px;
   border: none;
   outline: none;
-  font-size: 1rem;
   padding: 14px 16px;
   border-radius: 14px;
+  background: white;
 }
 
 .search-bar button {
   border: none;
-  cursor: pointer;
-  padding: 14px 20px;
+  padding: 14px 24px;
   border-radius: 14px;
   font-weight: 700;
   color: white;
-  background: linear-gradient(135deg, #ff8a00, #ff4ecd);
+  background: linear-gradient(135deg, #00CCFF, #c480e8);
+  cursor: pointer;
+}
+
+/* Grid de Seções e Destaques */
+.cards-grid, .highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.feature-card, .game-card {
+  padding: 24px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   transition: 0.3s ease;
 }
 
-.search-bar button:hover {
-  transform: translateY(-2px);
-}
-
-/* Seções */
-.section-title {
-  margin-bottom: 20px;
+.feature-card:hover, .game-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .section-title h3 {
-  margin: 0 0 8px;
-  font-size: 2rem;
-}
-
-.section-title p {
-  margin: 0;
-  color: #d8dcff;
-}
-
-.section-title.light p {
-  color: #eef0ff;
-}
-
-/* Cards principais */
-.main-sections {
-  position: relative;
-  z-index: 2;
-  margin-bottom: 46px;
-}
-
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.feature-card {
-  padding: 24px;
-  border-radius: 22px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.06));
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  transition: 0.35s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
-}
-
-.feature-card .icon {
-  font-size: 2rem;
-  margin-bottom: 12px;
-}
-
-.feature-card h4 {
-  margin: 0 0 10px;
-  font-size: 1.25rem;
-}
-
-.feature-card p {
-  margin: 0;
-  line-height: 1.6;
-  color: #d8dcff;
-}
-
-/* Destaques */
-.highlights {
-  position: relative;
-  z-index: 2;
-  margin-bottom: 46px;
-  padding: 32px;
-  border-radius: 28px;
-  background: linear-gradient(135deg, rgba(255, 78, 205, 0.18), rgba(0, 212, 255, 0.14));
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.highlight-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.game-card {
-  padding: 22px;
-  border-radius: 22px;
-  background: rgba(15, 16, 33, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  transition: 0.3s ease;
-}
-
-.game-card:hover {
-  transform: translateY(-6px);
+  font-size: 1.8rem;
+  margin-bottom: 5px;
 }
 
 .badge {
   display: inline-block;
-  margin-bottom: 14px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  background: rgba(255, 255, 255, 0.12);
-  color: #ffe08a;
-}
-
-.game-card h4 {
-  margin: 0 0 10px;
-  font-size: 1.3rem;
-}
-
-.game-card p {
-  margin: 0 0 16px;
-  line-height: 1.6;
-  color: #e7e9ff;
-}
-
-.game-card button {
-  border: none;
-  cursor: pointer;
-  padding: 10px 16px;
-  border-radius: 12px;
-  font-weight: 700;
-  color: #ffffff;
-  background: linear-gradient(135deg, #7a5cff, #00d4ff);
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(0, 204, 255, 0.2);
+  color: #00CCFF;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 /* CTA */
-.cta-section {
-  position: relative;
-  z-index: 2;
-  margin-bottom: 40px;
-}
-
 .cta-box {
-  padding: 34px;
+  padding: 40px;
   border-radius: 28px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(12px);
+  background: linear-gradient(135deg, rgba(255, 78, 205, 0.1), rgba(122, 92, 255, 0.1));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 50px;
 }
 
-.cta-box h3 {
-  margin: 0 0 12px;
-  font-size: 2rem;
-}
-
-.cta-box p {
-  margin: 0 auto 20px;
-  max-width: 720px;
-  line-height: 1.7;
-  color: #d8dcff;
-}
-
-.cta-actions {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-/* Rodapé */
-.footer {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-}
-
-.footer p {
-  margin: 6px 0 0;
-  color: #d8dcff;
-}ddd
-
-.footer-links {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  align-items: center;
-  color: #d8dcff;
-}
-
-/* Animações */
-@keyframes floatShape {
-  0%, 100% {
-    transform: translateY(0px) translateX(0px);
-  }
-  50% {
-    transform: translateY(-15px) translateX(10px);
-  }
-}
-
+/* Animação Flutuar */
 @keyframes floatCard {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-}
-
-@keyframes pulseGlow {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 0 50px rgba(122, 92, 255, 0.35);
-  }
-  50% {
-    transform: scale(1.03);
-    box-shadow: 0 0 70px rgba(255, 78, 205, 0.45);
-  }
-}
-
-@keyframes rotateIcon {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 /* Responsivo */
-@media (max-width: 1100px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .cards-grid,
-  .highlight-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .hero-text h2 {
-    font-size: 2.6rem;
-  }
+@media (max-width: 992px) {
+  .hero { grid-template-columns: 1fr; text-align: center; }
+  .cards-grid, .highlight-grid { grid-template-columns: 1fr; }
+  .hero-visual { min-height: 250px; }
 }
 
-@media (max-width: 768px) {
-  .home-page {
-    padding: 20px;
-  }
-
-  .topbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .menu {
-    width: 100%;
-  }
-
-  .cards-grid,
-  .highlight-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-text h2 {
-    font-size: 2.1rem;
-  }
-
-  .hero-visual {
-    min-height: 300px;
-  }
-
-  .main-circle {
-    width: 220px;
-    height: 220px;
-  }
-
-  .inner-circle {
-    font-size: 4.5rem;
-  }
+.btn-buy {
+  background-color: #c480e8;
 }
-
-.d20-container {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  perspective: 1000px; /* Dá profundidade para a animação */
-}
-
-/*.d20-svg {
-  width: 400px;
-  height: 700px;
-  color: #00CCFF; /* Seu azul padrão */
- /* filter: drop-shadow(0 0 10px rgba(0, 204, 255, 0.5)); /* Brilho neon */
-  
-  /* Chama a animação chamada 'girar-d20' */
- /* animation: girar-d20 5s infinite linear;
-}*/
-
-.d20-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  perspective: 1200px;
-  height: 100%;
-}
-
-/* OBJETO 3D */
-.d20-3d {
-  width: 200px;
-  height: 200px;
-  position: relative;
-  transform-style: preserve-3d;
-
-  animation: rotateD20 8s infinite linear;
-}
-
-/* FACES */
-.d20-face {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background: rgba(0, 204, 255, 0.1);
-  border: 2px solid rgba(0, 204, 255, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 48px;
-  font-weight: bold;
-  color: #00ccff;
-
-  backdrop-filter: blur(6px);
-  box-shadow: 0 0 20px rgba(0, 204, 255, 0.3);
-}
-
-/* POSIÇÕES 3D */
-.front  { transform: rotateY(0deg) translateZ(100px); }
-.back   { transform: rotateY(180deg) translateZ(100px); }
-.right  { transform: rotateY(90deg) translateZ(100px); }
-.left   { transform: rotateY(-90deg) translateZ(100px); }
-.top    { transform: rotateX(90deg) translateZ(100px); }
-.bottom { transform: rotateX(-90deg) translateZ(100px); }
-
-/* ANIMAÇÃO REAL 3D */
-@keyframes rotateD20 {
-  0% {
-    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  }
-  50% {
-    transform: rotateX(180deg) rotateY(180deg) rotateZ(90deg);
-  }
-  100% {
-    transform: rotateX(360deg) rotateY(360deg) rotateZ(180deg);
-  }
-}
-
-/* HOVER (fica top demais) */
-.d20-container:hover .d20-3d {
-  animation-play-state: paused;
-  transform: scale(1.1) rotateX(20deg) rotateY(20deg);
-  cursor: pointer;
-}
-
-
-/* Criando o movimento de giro */

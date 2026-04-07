@@ -12,8 +12,11 @@ import { filter } from 'rxjs/operators';
 })
 export class NavbarComponent {
 
-    estaLogado() {
-    return localStorage.getItem("cliente") != null;
+  estaLogado() {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      return localStorage.getItem('token'); // ou sua lógica de login
+    }
+    return false;
   }
 
   logout() {

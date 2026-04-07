@@ -32,16 +32,16 @@
 .menu { display: flex; flex-wrap: wrap; gap: 10px; }
 
 .cart-button {
-  background: linear-gradient(135deg, #2d0081, #2f00ff) !important;
+  background: linear-gradient(80deg, #159eee, #5a03d5ed) !important;
 }
 
 /* Isso vai afetar os textos e os botões dentro do seu menu */
 .menu button {
   border: none; cursor: pointer; padding: 10px 14px;
   border-radius: 12px; font-weight: 700; color: #ffffff;
-  color: #00A3FF; /* O azul da foto */
+  color: #d9deff; /* O azul da foto */
   transition: color 0.3s ease; /* Faz a mudança de cor ser suave */
-  background: rgba(255, 255, 255, 0.08); transition: 0.3s ease;
+  background: #00A3FF; transition: 0.3s ease;
   border: none;
 }
 
@@ -58,4 +58,7 @@
   color: #FFFFFF;
 }
 
+.btn-ini {
+  background-color: linear-gradient(80deg, #159eee, #5a03d5ed);
+}
 

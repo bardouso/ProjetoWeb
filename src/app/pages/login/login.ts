@@ -18,8 +18,6 @@ export class Login {
 
   constructor(private router: Router) {}
 
-
-
   fazerLogin() {
 
     // validação
