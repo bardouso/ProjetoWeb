@@ -1,13 +1,26 @@
 /* RESET E FUNDO GLOBAL */
-body, html {
-  margin: 0; padding: 0; width: 100%; min-height: 100vh;
-  background: #0f1021;
-  background: radial-gradient(circle at top left, rgba(255, 0, 128, 0.18), transparent 25%),
-              radial-gradient(circle at bottom right, rgba(0, 200, 255, 0.18), transparent 25%),
-              linear-gradient(135deg, #0f1021, #1b1f3b, #2b1d52);
+/* Aplique no html e no body para garantir que o fundo cubra tudo */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  
+  /* O background-attachment: fixed funciona melhor aqui */
+  background-color: #0f1021; 
+  background-image: 
+    radial-gradient(circle at top left, rgba(255, 0, 128, 0.18), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(0, 200, 255, 0.18), transparent 25%),
+    linear-gradient(135deg, #0f1021, #1b1f3b, #2b1d52);
   background-attachment: fixed;
+  background-size: cover;
+
   color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px; /* Reduzi um pouco porque essa fonte é naturalmente gigante */
+  
+  /* Evita barras de rolagem horizontais indesejadas */
+  overflow-x: hidden; 
 }
 
 .bg-shape {
@@ -172,4 +185,53 @@ body {
   .floating-card {
     display: none; /* Esconde os cards flutuantes em telas muito pequenas para limpar o visual */
   }
+}
+
+/* No seu styles.css para afetar o site todo */
+
+button, 
+.btn, 
+input[type="button"], 
+input[type="submit"] {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px; /* Importante: essa fonte é grande, 10px ou 12px costuma ser o ideal */
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* Efeito de brilho neon que combina com seu fundo */
+button:hover, .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 204, 255, 0.6);
+}
+
+/* Botão Azul (Padrão) */
+.btn-primary {
+  background-color: #00CCFF;
+  color: #0f1021;
+}
+
+/* Botão Rosa (Ação Secundária ou Destaque) */
+.btn-secondary {
+  background-color: #ff4ecd;
+  color: #ffffff;
+}
+
+/* Botão com Borda (Estilo Outline) */
+.btn-outline {
+  background: transparent;
+  border: 2px solid #00CCFF;
+  color: #00CCFF;
+}
+
+.btn-outline:hover {
+  background: #00CCFF;
+  color: #0f1021;
 }

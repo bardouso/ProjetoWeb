@@ -1,39 +1,34 @@
-<br>
-
 <div class="container-cadastro">
   <div class="cadastro-box">
-
-
     <h2>Cadastro de Cliente</h2>
 
     <div class="form-group">
       <label>Nome</label>
-      <input type="text" [(ngModel)]="obj.nome">
+      <input type="text" [(ngModel)]="obj.nome" placeholder="Digite seu nome completo">
     </div>
 
     <div class="form-group">
       <label>Email</label>
-      <input type="text" [(ngModel)]="obj.email">
+      <input type="email" [(ngModel)]="obj.email" placeholder="Seu melhor e-mail">
     </div>
 
     <div class="form-group">
       <label>Documento</label>
-      <input type="text" [(ngModel)]="obj.documento">
+      <input type="text" [(ngModel)]="obj.documento" placeholder="CPF ou RG">
     </div>
 
     <div class="form-group">
       <label>Senha</label>
-      <input type="password" [(ngModel)]="obj.senha">
+      <input type="password" [(ngModel)]="obj.senha" placeholder="Crie uma senha forte">
     </div>
 
     <div class="form-group">
       <label>Endereço</label>
-      <textarea [(ngModel)]="obj.logradouro"></textarea>
+      <textarea [(ngModel)]="obj.logradouro" rows="3" placeholder="Rua, número, bairro..."></textarea>
     </div>
 
-    <button (click)="cadastrar()">Cadastrar</button>
+    <button class="btn-primary" (click)="cadastrar()">Cadastrar</button>
 
+    <p class="login-link">Já tem uma conta? <span routerLink="/login">Faça Login</span></p>
   </div>
 </div>
-
-<br>

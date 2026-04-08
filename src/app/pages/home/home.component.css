@@ -2,39 +2,41 @@
   display: block;
 }
 
-/* O container agora é transparente para mostrar o fundo do Body */
 .home-page {
   position: relative;
   min-height: 100vh;
-  padding: 100px;
+  padding: 60px 5%;
   box-sizing: border-box;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
-/* Hero Section */
+/* --- HERO --- */
 .hero {
-  position: relative;
-  z-index: 2;
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
-  gap: 30px;
+  gap: 40px;
   align-items: center;
-  margin-bottom: 38px;
+  margin-bottom: 80px;
 }
 
 .tag {
   display: inline-block;
-  margin-bottom: 18px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
+  margin-bottom: 20px;
+  padding: 8px 12px;
+  background: rgba(0, 204, 255, 0.1);
+  border: 1px solid #00CCFF;
   color: #ffe59d;
-  font-size: 0.9rem;
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  text-transform: uppercase;
 }
 
 .hero-text h2 {
-  margin: 0 0 16px;
-  font-size: 3.2rem;
-  line-height: 1.1;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  line-height: 1.4;
+  margin-bottom: 24px;
 }
 
 .hero-text h2 span {
@@ -42,97 +44,78 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  color: transparent;
 }
 
 .hero-text p {
-  margin: 0 0 24px;
-  max-width: 680px;
+  font-family: 'VT323', monospace;
+  font-size: 1.5rem;
   color: #d8dcff;
-  font-size: 1.05rem;
-  line-height: 1.7;
+  margin-bottom: 32px;
 }
 
 .hero-stats {
   display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
+  gap: 20px;
 }
 
 .stat-card {
-  min-width: 160px;
-  padding: 16px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  text-align: center;
 }
 
 .stat-card strong {
   display: block;
-  margin-bottom: 4px;
-  font-size: 1.2rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.9rem;
+  color: #00CCFF;
+  margin-bottom: 8px;
 }
 
 .stat-card span {
-  color: #d8dcff;
-  font-size: 0.95rem;
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
 }
 
-/* Hero Visual (Onde fica o D20) */
+/* --- CUBO D20 3D (CORREÇÃO) --- */
 .hero-visual {
   position: relative;
-  min-height: 420px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.floating-card {
-  position: absolute;
-  padding: 10px 16px;
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 0.85rem;
-  background: rgba(255, 255, 255, 0.10);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(8px);
-  z-index: 3;
-}
-
-.card-1 { top: 40px; left: 20px; animation: floatCard 4s ease-in-out infinite; }
-.card-2 { top: 120px; right: 30px; animation: floatCard 5s ease-in-out infinite 0.8s; }
-.card-3 { bottom: 50px; left: 50px; animation: floatCard 4.5s ease-in-out infinite 1.2s; }
-
-/* D20 3D ANIMATION */
 .d20-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  perspective: 1200px;
+  perspective: 1000px; /* Necessário para o 3D */
+  width: 120px;
+  height: 120px;
 }
 
 .d20-3d {
-  width: 120px; /* Reduzi um pouco para não atropelar o texto */
-  height: 120px;
+  width: 100%;
+  height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  animation: rotateD20 12s infinite linear;
+  animation: rotateD20 15s infinite linear;
 }
 
 .d20-face {
   position: absolute;
   width: 120px;
   height: 120px;
-  background: rgba(0, 204, 255, 0.15);
-  border: 1px solid rgba(0, 204, 255, 0.6);
+  background: rgba(0, 204, 255, 0.1);
+  border: 2px solid #00CCFF;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
-  font-weight: bold;
-  color: #00ccff;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+  color: #00CCFF;
   backdrop-filter: blur(4px);
-  box-shadow: inset 0 0 15px rgba(0, 204, 255, 0.2);
+  box-shadow: inset 0 0 20px rgba(0, 204, 255, 0.2);
 }
 
 /* Posições das faces 3D */
@@ -144,109 +127,279 @@
 .bottom { transform: rotateX(-90deg) translateZ(60px); }
 
 @keyframes rotateD20 {
-  from { transform: rotateX(0) rotateY(0) rotateZ(0); }
-  to { transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg); }
+  from { transform: rotateX(0deg) rotateY(0deg); }
+  to { transform: rotateX(360deg) rotateY(720deg); }
 }
 
-/* Busca */
-.search-section {
-  position: relative;
-  z-index: 2;
-  margin-bottom: 40px;
+/* CARDS FLUTUANTES */
+.floating-card {
+  position: absolute;
+  padding: 10px 15px;
+  background: rgba(15, 16, 33, 0.8);
+  border: 1px solid #ff4ecd;
+  color: #ffffff;
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  z-index: 5;
 }
 
+.card-1 { top: 10%; left: 0; animation: floatCard 4s infinite ease-in-out; }
+.card-2 { top: 30%; right: 0; animation: floatCard 5s infinite ease-in-out 0.5s; }
+.card-3 { bottom: 10%; left: 20%; animation: floatCard 4.5s infinite ease-in-out 1s; }
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* --- BUSCA --- */
 .search-box {
-  padding: 28px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px solid #00CCFF;
+  border-radius: 20px;
   backdrop-filter: blur(10px);
+  margin-bottom: 80px;
 }
 
-.search-bar {
-  display: flex;
-  gap: 12px;
+.search-box h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  margin-bottom: 25px;
 }
 
 .search-bar input {
-  flex: 1;
-  border: none;
-  outline: none;
-  padding: 14px 16px;
-  border-radius: 14px;
-  background: white;
-}
-
-.search-bar button {
-  border: none;
-  padding: 14px 24px;
-  border-radius: 14px;
-  font-weight: 700;
-  color: white;
-  background: linear-gradient(135deg, #00CCFF, #c480e8);
-  cursor: pointer;
-}
-
-/* Grid de Seções e Destaques */
-.cards-grid, .highlight-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 20px;
-}
-
-.feature-card, .game-card {
-  padding: 24px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  transition: 0.3s ease;
-}
-
-.feature-card:hover, .game-card:hover {
-  transform: translateY(-5px);
+  font-family: 'VT323', monospace;
+  font-size: 1.4rem;
   background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(0, 204, 255, 0.5);
+  padding: 15px;
+  color: white;
+  border-radius: 8px;
 }
 
+/* --- GRIDS --- */
 .section-title h3 {
-  font-size: 1.8rem;
-  margin-bottom: 5px;
-}
-
-.badge {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 20px;
-  background: rgba(0, 204, 255, 0.2);
-  color: #00CCFF;
-  font-size: 0.75rem;
-  font-weight: bold;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.3rem;
   margin-bottom: 10px;
 }
 
-/* CTA */
+.section-title p {
+  font-family: 'VT323', monospace;
+  font-size: 1.3rem;
+  color: #b0b8ff;
+  margin-bottom: 30px;
+}
+
+.cards-grid, .highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.feature-card, .game-card {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.feature-card:hover, .game-card:hover {
+  border-color: #00CCFF;
+  transform: translateY(-5px);
+}
+
+.feature-card h4, .game-card h4 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  margin: 15px 0;
+}
+
+.feature-card p, .game-card p {
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  color: #d8dcff;
+}
+
+.badge {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem;
+  background: #ff4ecd;
+  padding: 5px 10px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+/* --- CTA --- */
 .cta-box {
-  padding: 40px;
-  border-radius: 28px;
+  padding: 60px;
+  background: rgba(0, 204, 255, 0.05);
+  border: 2px dashed #00CCFF;
+  border-radius: 20px;
   text-align: center;
-  background: linear-gradient(135deg, rgba(255, 78, 205, 0.1), rgba(122, 92, 255, 0.1));
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  margin-top: 50px;
 }
 
-/* Animação Flutuar */
-@keyframes floatCard {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+.cta-box h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
 }
 
-/* Responsivo */
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Responsividade */
 @media (max-width: 992px) {
   .hero { grid-template-columns: 1fr; text-align: center; }
-  .cards-grid, .highlight-grid { grid-template-columns: 1fr; }
-  .hero-visual { min-height: 250px; }
+  .hero-stats { justify-content: center; }
+  .hero-visual { height: 300px; }
 }
 
+/* Container da busca (o que tem a borda azul neon) */
+.search-box {
+  padding: 40px;
+  background: rgba(15, 16, 33, 0.6);
+  border: 2px solid #00CCFF;
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.search-box h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Barra que segura o input e o botão */
+.search-bar {
+  display: flex;
+  gap: 0; 
+  width: 100%; /* Faz a barra ocupar 100% do espaço da moldura */
+  margin-top: 10px;
+}
+
+/* Estilização do Campo de Digitação */
+.search-bar input {
+  flex: 1; /* Ocupa todo o espaço restante, empurrando o botão para o final */
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #00CCFF;
+  border-right: none;
+  border-radius: 12px 0 0 12px;
+  padding: 18px 25px;
+  color: white;
+  font-family: 'VT323', monospace;
+  font-size: 1.4rem;
+  outline: none;
+}
+
+/* Estilização do Botão Buscar */
+.search-bar button {
+  background: #00CCFF;
+  color: #0f1021;
+  border: 2px solid #00CCFF;
+  border-radius: 0 12px 12px 0;
+  padding: 0 40px; /* Largura interna do botão */
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  white-space: nowrap; /* Impede que o texto "BUSCAR" quebre linha */
+}
+/* --- ESTILIZAÇÃO DAS BADGES (TOP 1, HOT, NEW) --- */
+.badge {
+  display: inline-block;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem; /* Aumentei o tamanho */
+  background-color: #ff0000; /* Vermelho puro e forte */
+  color: #ffffff;
+  padding: 8px 15px;
+  border-radius: 4px; /* Formato mais quadradinho 8-bit */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 0px #800000; /* Sombra sólida para dar profundidade */
+}
+
+/* --- ESTILIZAÇÃO DO BOTÃO VER JOGO --- */
 .btn-buy {
-  background-color: #c480e8;
+  width: 100%;
+  max-width: 200px;
+  padding: 15px;
+  margin-top: 20px;
+  
+  /* Cores Corrigidas: Fundo escuro para o texto branco aparecer */
+  background: #00CCFF; /* Azul neon igual ao seu Navbar */
+  color: #0f1021;      /* Texto escuro para dar contraste total */
+  
+  border: none;
+  border-radius: 12px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  
+  /* Efeito de brilho */
+  box-shadow: 0 5px 15px rgba(0, 204, 255, 0.3);
+}
+
+.btn-buy:hover {
+  background: #ff4ecd; /* Rosa neon no hover */
+  color: #ffffff;      /* Aqui o texto fica branco no fundo rosa */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 78, 205, 0.5);
+}
+
+/* Ajuste no título do card para não sumir */
+.game-card h4 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.game-card p {
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  color: #d1d1d1;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  /* ... outros códigos de responsividade ... */
+
+  .hero-stats {
+    flex-direction: column; /* Faz os cartões ficarem um embaixo do outro */
+    align-items: center;    /* Centraliza os cartões */
+    gap: 15px;              /* Espaço entre um cartão e outro */
+    width: 100%;
+  }
+
+  .stat-card {
+    width: 100%;            /* Faz o cartão ocupar a largura total disponível */
+    max-width: 300px;       /* Limita a largura para não ficar esticado demais */
+    min-width: unset;       /* Remove a restrição de tamanho mínimo que tínhamos antes */
+    padding: 20px;
+    text-align: center;     /* Garante que o texto fique centralizado */
+  }
+
+  .hero-text h2 {
+    font-size: 1.5rem;      /* Ajuste opcional para o título não ficar gigante no celular */
+    line-height: 1.3;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;      /* Melhora a leitura do parágrafo no celular */
+  }
 }

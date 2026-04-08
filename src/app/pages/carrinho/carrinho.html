@@ -1,51 +1,57 @@
-<div class="carrinho-container">
+<div class="carrinho-page">
+  <div class="carrinho-container">
+    <h2 class="titulo-carrinho">Seu Carrinho</h2>
 
-  <h2 class="titulo-carrinho">Seu Carrinho</h2>
+    <div *ngIf="mensagem.length > 0" class="alerta-vazio">
+      {{ mensagem }}
+    </div>
 
-  <div *ngIf="mensagem.length>0" class="alerta-vazio">
-    {{mensagem}}
+    <div class="tabela-wrapper" *ngIf="lista.length > 0">
+      <table class="tabela-carrinho">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Subtotal</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let obj of lista; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td class="nome-produto">{{ obj.produto.nome }}</td>
+
+            <td>
+              <div class="qtd-box">
+                <button class="btn-qtd" (click)="diminuir(obj)">-</button>
+                <span>{{ obj.quantidade }}</span>
+                <button class="btn-qtd" (click)="aumentar(obj)">+</button>
+              </div>
+            </td>
+
+            <td class="subtotal">R$ {{ obj.produto.preco * obj.quantidade }}</td>
+
+            <td>
+              <button class="btn-remover" (click)="remover(obj)">
+                Remover
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer-carrinho" *ngIf="lista.length > 0">
+      <div class="total-box">
+        Total: <span>R$ {{ total }}</span>
+      </div>
+
+      <div class="acoes">
+        <button class="btn-limpar" (click)="limpar()">Limpar</button>
+        <button class="btn-finalizar">Finalizar Pedido</button>
+      </div>
+    </div>
   </div>
-
-  <table class="tabela-carrinho" *ngIf="lista.length>0">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Produto</th>
-        <th>Quantidade</th>
-        <th>Subtotal</th>
-        <th>Ações</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr *ngFor="let obj of lista; let i = index">
-        <td>{{i + 1}}</td>
-        <td>{{obj.produto.nome}}</td>
-
-        <td class="qtd-box">
-          <button class="btn-qtd" (click)="diminuir(obj)">-</button>
-          <span>{{obj.quantidade}}</span>
-          <button class="btn-qtd" (click)="aumentar(obj)">+</button>
-        </td>
-
-        <td>R$ {{obj.produto.preco * obj.quantidade}}</td>
-
-        <td>
-          <button class="btn-remover" (click)="remover(obj)">
-            Remover
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="total-box" *ngIf="lista.length>0">
-    Total: <strong>R$ {{total}}</strong>
-  </div>
-
-  <div class="acoes" *ngIf="lista.length>0">
-    <button class="btn-limpar" (click)="limpar()">Limpar Carrinho</button>
-    <button class="btn-finalizar">Finalizar Pedido</button>
-  </div>
-
 </div>

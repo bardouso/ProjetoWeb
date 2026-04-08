@@ -25,13 +25,29 @@
 </div> -->
 
 
-<div class="login-container">
-  <h2>Login</h2>
+<div class="login-page"> <!-- Container para centralizar na tela -->
+  <div class="login-container">
+    <h2>Login</h2>
 
-  <input type="email" [(ngModel)]="email" placeholder="Email">
-  <input type="password" [(ngModel)]="senha" placeholder="Senha">
+    <!-- Grupo de Email -->
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" [(ngModel)]="email" placeholder="Digite seu email">
+    </div>
 
-  <button (click)="fazerLogin()">Entrar</button>
+    <!-- Grupo de Senha -->
+    <div class="form-group">
+      <label>Senha</label>
+      <input type="password" [(ngModel)]="senha" placeholder="Digite sua senha">
+    </div>
 
-  <p class="erro">{{mensagem}}</p>
+    <button (click)="fazerLogin()">Entrar</button>
+
+    <!-- Mensagem de erro estilizada -->
+    @if (mensagem) {
+      <p class="erro">{{mensagem}}</p>
+    }
+
+    <p class="signup-link">Não tem conta? <span routerLink="/cadastro">Cadastre-se</span></p>
+  </div>
 </div>

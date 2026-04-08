@@ -1,23 +1,98 @@
-.login-container {
-  width: 300px;
-  margin: auto;
-  margin-top: 100px;
+.login-page {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh; /* Centraliza verticalmente na tela */
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 25px; /* Espaço entre um campo e outro */
+}
+
+label {
+  display: block;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.65rem;
+  color: #d1d1d1;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 input {
-  padding: 10px;
+  width: 100%;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #00CCFF;
+  border-radius: 12px;
+  color: #fff;
+  font-family: 'VT323', monospace; /* Fonte quadradinha, mas fácil de ler */
+  font-size: 1.2rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #ff4ecd;
+  box-shadow: 0 0 15px rgba(255, 78, 205, 0.4);
 }
 
 button {
-  padding: 10px;
-  background: purple;
-  color: white;
+  width: 100%;
+  padding: 15px;
+  background: #00CCFF;
+  color: #0f1021;
   border: none;
+  border-radius: 12px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background: #ff4ecd;
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(255, 78, 205, 0.6);
 }
 
 .erro {
-  color: red;
+  color: #ff4e4e;
+  font-family: 'VT323', monospace;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  color: #d1d1d1;
+}
+
+.signup-link span {
+  color: #00CCFF;
+  cursor: pointer;
+  text-decoration: underline;
 }

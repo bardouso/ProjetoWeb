@@ -3,15 +3,78 @@
   z-index: 2;
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  align-items: center;
+  gap: 30px;
   flex-wrap: wrap;
-  padding: 16px 40px;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 40px 5%;
+  
+  /* Efeito de Vidro */
+  background: rgba(15, 16, 33, 0.4);
+  backdrop-filter: blur(10px);
+  border-top: 2px solid #00CCFF; /* Linha Neon no topo */
+  box-shadow: 0 -10px 20px rgba(0, 204, 255, 0.1);
+  
+  margin-top: 50px;
 }
 
-.footer p { margin: 6px 0 0; color: #d8dcff; }
+/* Marca LudosFera */
+.brand-name {
+  display: block;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  color: #00CCFF;
+  text-shadow: 2px 2px #ff4ecd;
+  margin-bottom: 10px;
+}
 
+.brand-tagline {
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  color: #d8dcff;
+  margin: 0;
+}
+
+/* Links do Menu */
 .footer-links {
-  display: flex; gap: 16px; flex-wrap: wrap;
-  align-items: center; color: #d8dcff;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem; /* Press Start é grande, então mantemos pequeno */
+  color: #d8dcff;
+  transition: 0.3s;
+  text-transform: uppercase;
+}
+
+.footer-links a:hover {
+  color: #ff4ecd; /* Rosa Neon ao passar o mouse */
+  text-shadow: 0 0 8px rgba(255, 78, 205, 0.8);
+  transform: translateY(-2px);
+}
+
+/* Copyright lateral */
+.footer-copyright p {
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+}
+
+/* Responsividade para Celular */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  
+  .footer-links {
+    justify-content: center;
+    gap: 15px;
+  }
 }

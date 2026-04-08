@@ -1,154 +1,248 @@
-body {
-  background: linear-gradient(120deg, #0f172a, #1e293b);
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
+.carrinho-page {
+  padding: 40px 20px;
+  min-height: 80vh;
 }
 
-/* CONTAINER */
 .carrinho-container {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 40px;
+  backdrop-filter: blur(12px);
 }
 
-/* TÍTULO */
 .titulo-carrinho {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: 2px 2px #ff4ecd;
 }
 
 /* ALERTA VAZIO */
 .alerta-vazio {
-  padding: 15px;
-  border-radius: 10px;
-  background: rgba(255, 100, 100, 0.2);
+  font-family: 'VT323', monospace;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 20px;
+  color: #ff4e4e;
+  border: 2px dashed #ff4e4e;
+  border-radius: 12px;
 }
 
-/* TABELA */
+/* TABELA ESTILO INVENTÁRIO */
+.tabela-wrapper {
+  overflow-x: auto;
+}
+
 .tabela-carrinho {
   width: 100%;
-  border-collapse: collapse;
-  background: rgba(255,255,255,0.05);
-  border-radius: 12px;
-  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0 10px; /* Efeito de linhas separadas */
+  font-family: 'VT323', monospace;
+  font-size: 1.3rem;
 }
 
-/* CABEÇALHO */
 .tabela-carrinho th {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  padding: 14px;
-  text-align: center;
-  font-weight: bold;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem;
+  color: #00CCFF;
+  text-transform: uppercase;
+  padding: 15px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-/* CÉLULAS */
 .tabela-carrinho td {
-  padding: 14px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  text-align: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.03);
+  color: white;
 }
 
-/* Nome alinhado à esquerda */
-.tabela-carrinho th:nth-child(2),
-.tabela-carrinho td:nth-child(2) {
-  text-align: left;
-}
+.tabela-carrinho tr td:first-child { border-radius: 12px 0 0 12px; }
+.tabela-carrinho tr td:last-child { border-radius: 0 12px 12px 0; }
 
-/* Hover linha */
-.tabela-carrinho tr:hover {
-  background: rgba(255,255,255,0.05);
-}
+.nome-produto { color: #ffe59d; }
+.subtotal { color: #22c55e; font-weight: bold; }
 
 /* QUANTIDADE */
 .qtd-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  height: 78px;
+  gap: 15px;
 }
 
-.qtd-box span {
-  min-width: 25px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-/* BOTÕES + E - */
 .btn-qtd {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
+  background: #00CCFF;
   border: none;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
+  border-radius: 4px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: 0.2s;
 }
 
 .btn-qtd:hover {
+  background: #ff4ecd;
   transform: scale(1.1);
 }
 
 /* BOTÃO REMOVER */
 .btn-remover {
-  background: linear-gradient(135deg, #ef4444, #b91c1c);
-  border: none;
-  padding: 6px 14px;
-  border-radius: 8px;
-  color: white;
+  background: transparent;
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  padding: 5px 10px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.5rem;
   cursor: pointer;
+  border-radius: 4px;
+  text-transform: uppercase;
 }
 
 .btn-remover:hover {
-  transform: scale(1.05);
+  background: #ef4444;
+  color: white;
 }
 
-/* TOTAL */
+/* FOOTER DO CARRINHO */
+.footer-carrinho {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+}
+
 .total-box {
-  text-align: right;
-  font-size: 2rem;
-  margin-top: 25px;
-  font-weight: bold;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
 }
 
-.total-box strong {
+.total-box span {
   color: #22c55e;
-  font-size: 2.3rem;
+  margin-left: 10px;
 }
 
-/* BOTÕES FINAL */
 .acoes {
   display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-  margin-top: 20px;
+  gap: 15px;
+}
+
+.btn-limpar, .btn-finalizar {
+  padding: 15px 20px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.3s;
 }
 
 .btn-limpar {
-  background: linear-gradient(135deg, #f59e0b, #d97706);
-  border: none;
-  padding: 10px 18px;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
   color: white;
-  cursor: pointer;
+  border: 1px solid white;
 }
 
 .btn-finalizar {
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-  border: none;
-  padding: 10px 18px;
-  border-radius: 8px;
-  color: white;
-  cursor: pointer;
+  background: #22c55e;
+  color: #0f1021;
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
 }
 
-.btn-limpar:hover,
-.btn-finalizar:hover {
-  transform: scale(1.05);
+.btn-limpar:hover { background: #ff4e4e; border-color: #ff4e4e; }
+.btn-finalizar:hover { transform: translateY(-3px); box-shadow: 0 0 25px rgba(34, 197, 94, 0.6); }
+
+@media (max-width: 768px) {
+  /* 1. REMOVE O CARTÃO DE TÍTULOS DE CIMA */
+  /* Isso garante que qualquer estrutura de cabeçalho suma completamente */
+  .tabela-carrinho thead, 
+  .tabela-carrinho tr:first-child:not(:has(.nome-produto)) {
+    display: none !important;
+  }
+
+  .carrinho-container {
+    max-width: 95%;
+    padding: 15px;
+  }
+
+  /* 2. ESTILO DOS CARDS DE ITENS */
+  .tabela-carrinho tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px; /* Espaço interno entre os dados */
+    padding: 30px 15px;
+    margin-bottom: 20px;
+    background: rgba(15, 16, 33, 0.8);
+    border: 2px solid #00CCFF;
+    border-radius: 20px;
+  }
+
+  .tabela-carrinho td {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 5px 0 !important;
+    border: none !important;
+    background: transparent !important;
+  }
+
+  /* Garante que os rótulos antigos não voltem */
+  .tabela-carrinho td::before {
+    display: none !important;
+  }
+
+  /* 3. AUMENTO DAS FONTES DENTRO DO CARD */
+  
+  /* Nome do Jogo */
+  .nome-produto {
+    font-size: 4.0rem !important; /* Aumentado para destaque total */
+    color: #ffe59d !important;
+    font-family: 'VT323', monospace;
+    text-align: center;
+  }
+
+  /* Número da Quantidade */
+  .quantidade-texto {
+    font-size: 3.0rem !important; /* Bem grande entre os botões */
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  /* Subtotal (R$) */
+  .subtotal-valor {
+    font-size: 6rem !important; /* Fonte bem grande e impactante */
+    color: #22c55e !important;
+    font-family: 'VT323', monospace;
+    margin: 10px 0;
+  }
+
+  /* ID do Item */
+  .tabela-carrinho td:first-child {
+    font-size: 3rem !important;
+    opacity: 0.5;
+  }
+
+  /* BOTÕES DE QUANTIDADE (+ e -) */
+  .btn-qtd {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 2.5rem !important;
+    
+  }
+
+  /* BOTÃO REMOVER */
+  .btn-remover {
+    font-size: 0.8rem !important;
+    padding: 15px 30px !important;
+    margin-top: 15px;
+  }
 }
