@@ -1,44 +1,39 @@
 <div class="container mt-5">
-
   <div class="row">
     @for (obj of lista; track obj.id) {
       <div class="col-lg-3 col-md-4 col-sm-6 mb-5">
         
         <div class="product-card">
-
+          <!-- Moldura da Imagem -->
           <div class="img-wrapper">
-            <!-- Usando a primeira foto do array ou fallback se estiver vazio -->
-            <img [src]="obj.fotos[0] || 'assets/jogos/sem-foto'" class="img-fluid">
+            <img [src]="obj.fotos[0] || 'assets/jogos/sem-foto.png'" class="img-fluid">
           </div>
 
           <div class="product-info">
-            <h5 class="product-title">Jogo {{obj.nome}}</h5>
+            <h5 class="product-title">{{obj.nome}}</h5>
             
             <div class="price-and-button-row">
               <div class="price-container">
-                <span class="price-main">R$ {{obj.preco | number:'1.2-2'}}</span>
+                <span class="price-main">R${{obj.preco | number:'1.2-2'}}</span>
                 
                 <div class="player-info">
-                  <!-- Substitua a <img> por este <svg> -->
-                  <svg class="meeple-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <svg class="meeple-svg" viewBox="0 0 100 100">
                     <path d="M50 5 C40 5 35 15 35 25 C35 35 40 40 50 40 C60 40 65 35 65 25 C65 15 60 5 50 5 Z M30 45 C15 45 10 55 10 70 L10 95 L35 95 L35 75 L50 65 L65 75 L65 95 L90 95 L90 70 C90 55 85 45 70 45 Z" fill="currentColor"/>
                   </svg>
-                  
                   <span class="player-count">
-                    {{obj.min_jogadores}} - {{obj.max_jogadores}} Jogadores
+                    {{obj.min_jogadores}}-{{obj.max_jogadores}} P
                   </span>
                 </div>
               </div>
 
               <div class="wrapper-btn-buy">
                 <button class="btn-buy" [routerLink]="['/jogo-detalhe', obj.id]">
-                  <span class="btn-text">Detalhes</span>
+                  <span class="btn-text">DETALHES</span>
                   <span class="btn-icon">+</span>
                 </button>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     }

@@ -1,111 +1,200 @@
 .product-card {
   position: relative;
   background: transparent;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  font-family: 'Press Start 2P', cursive; /* Fonte global da vitrine */
 }
 
-.product-card:hover { transform: translateY(-5px); }
-
+/* Moldura Neon para a imagem */
 .img-wrapper {
-  background: white;
-  border-radius: 10px;
-  padding: 15px; /* Reduzi um pouco o padding para a imagem ganhar espaço */
+  background: rgba(255, 255, 255, 0.05); /* Efeito vidro */
+  border: 2px solid #00CCFF; /* Borda Neon Azul */
+  border-radius: 15px;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  /* --- ALTERE AQUI --- */
-  height: 400px; /* Aumente este valor para a caixa ficar mais alta */
-  /* ------------------- */
-
+  height: 320px; 
   margin-bottom: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  overflow: hidden; /* Garante que nada saia para fora da borda arredondada */
+  box-shadow: 0 0 15px rgba(0, 204, 255, 0.2);
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.product-card:hover .img-wrapper {
+  border-color: #ff4ecd; /* Muda para Rosa Neon no Hover */
+  box-shadow: 0 0 20px rgba(255, 78, 205, 0.4);
+  transform: translateY(-5px);
 }
 
 .img-wrapper img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain; /* Isso garante que a foto não estique nem corte */
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5)); /* Sombra na caixa do jogo */
 }
 
-.badge-novidade {
-  position: absolute;
-  top: 10px; left: 10px;
-  background-color: #61c2b1;
-  color: white; font-size: 10px; font-weight: bold;
-  padding: 4px 10px; border-radius: 20px; z-index: 2;
+.product-title {
+  /* --- APLICAÇÃO DA FONTE 8-BIT DE IMPACTO --- */
+  font-family: 'Press Start 2P', cursive !important;
+  
+  /* Tamanho ajustado para caber no card (fontes 8-bit são largas) */
+  font-size: 1.3rem !important; 
+  color: #ffffff;
+  
+  /* --- EFEITO DE SOMBRA IGUAL AO JOGO DETALHE (AJUSTADO) --- */
+  /* Reduzi o deslocamento de 3px para 2px para ficar proporcional ao tamanho menor */
+  text-shadow: 2px 2px #ff4ecd; 
+  
+  /* Mantendo o alinhamento e comportamento original */
+  margin-bottom: 12px;
+  height: 40px; /* Aumentei levemente para garantir 2 linhas sem cortar a sombra */
+  overflow: hidden;
+  text-transform: uppercase; /* Títulos 8-bit ficam melhores em maiúsculo */
+  line-height: 1.4;
+  text-align: left; /* Centraliza o título no card */
 }
 
 .price-and-button-row {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
-  width: 100%;
 }
 
 .price-main {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #00CCFF; /* Azul conforme sua última imagem */
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #22c55e; /* Verde para o preço */
+  display: block;
+  margin-bottom: 5px;
 }
 
 .player-info {
+  font-size: 1.4rem;
   display: flex;
   align-items: center;
-  gap: 6px;
-}
-
-.meeple-icon { width: 16px; height: 16px; }
-
-.player-count { font-size: 0.85rem; color: #bdc3c7; }
-
-/* --- BOTÃO EXPANSÍVEL --- */
-.btn-buy {
-  color: white; border: none;
-  height: 42px; min-width: 42px; border-radius: 21px;
-  cursor: pointer; overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-
-  background-color: #00CCFF; /* Aqui você coloca a cor que ele deve assumir no hover */
-}
-
-.btn-text {
-  max-width: 0; opacity: 0; white-space: nowrap;
-  font-weight: bold; text-transform: uppercase; font-size: 13px;
-  transition: all 0.4s ease; order: 1;
-}
-
-.btn-icon { font-size: 20px; width: 42px; display: flex; justify-content: center; order: 2; transition: 0.3s; }
-
-/* HOVER EFFECT */
-.product-card:hover .btn-buy { min-width: 130px; padding: 0 15px; }
-.product-card:hover .btn-text { max-width: 100px; opacity: 1; margin-right: 5px; }
-.product-card:hover .btn-icon { width: 0; opacity: 0; }
-
-.btn-buy:hover {
-  background-color: #c480e8 !important; /* Exemplo: muda para laranja só ao encostar no botão */
-  transform: scale(1.05); /* Dá um leve aumento */
-}
-
-.player-info {
-  display: flex;
-  align-items: center; /* Alinha o bonequinho no meio da linha do texto */
-  gap: 5px;            /* Espaço pequeno entre ícone e texto */
-  margin-top: 2px;
+  gap: 5px;
 }
 
 .meeple-svg {
-  width: 14px;        /* Tamanho pequeno */
-  height: 14px;       /* Tamanho pequeno */
-  fill: #00CCFF;      /* A cor azul exata do seu preço */
-  flex-shrink: 0;     /* Impede que o bonequinho amasse */
+  width: 12px;
+  height: 12px;
+  fill: #00CCFF;
 }
 
 .player-count {
-  font-size: 0.85rem;
-  color: #bdc3c7;     /* Cor cinza claro das letras */
-  font-weight: 500;
-  line-height: 1;     /* Ajusta a altura da linha para alinhar com o ícone */
+  font-family: 'VT323', monospace; /* Fonte secundária para detalhes menores */
+  font-size: 2.0rem;
+  color: #bdc3c7;
+}
+
+/* --- BOTÃO ESTILO ARCADE --- */
+.btn-buy {
+  background-color: #00CCFF;
+  color: #0f1021;
+  border: none;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-text {
+  max-width: 0;
+  opacity: 0;
+  white-space: nowrap;
+  font-size: 0.6rem;
+  transition: all 0.3s ease;
+}
+
+.btn-icon {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Hover do Card expande o botão */
+.product-card:hover .btn-buy {
+  min-width: 100px;
+  background-color: #ff4ecd;
+}
+
+.product-card:hover .btn-text {
+  max-width: 80px;
+  opacity: 1;
+  margin-right: 5px;
+}
+
+.btn-buy:hover {
+  transform: scale(1.1);
+}
+
+/* RESPONSIVIDADE DOS PRODUTOS */
+@media (max-width: 768px) {
+  
+  /* Ajuste da altura da moldura para não ocupar a tela toda */
+  .img-wrapper {
+    height: 220px; /* Reduzido de 320px para caber melhor no celular */
+    padding: 8px;
+    border-width: 1.5px; /* Borda um pouco mais fina para não pesar */
+  }
+
+  .product-title {
+    font-size: 2rem; /* Letra levemente menor para não quebrar o layout */
+    height: 45px; /* Aumentado para garantir que nomes médios caibam em 2 linhas */
+    margin-bottom: 8px;
+  }
+
+  /* Preço e Linha de Baixo */
+  .price-main {
+    font-size: 1.5rem;
+  }
+
+  .player-count {
+    font-size: 3rem;
+  }
+
+  /* --- AJUSTE DO BOTÃO ARCADE PARA TOUCH --- */
+  
+  /* No celular não tem hover, então vamos deixar o botão 
+     em um estado intermediário ou focado no ícone grande */
+  .btn-buy {
+    height: 45px; /* Botão um pouco mais alto para o clique do dedo */
+    min-width: 45px;
+    background-color: #00CCFF; /* Mantém a cor padrão */
+  }
+
+  /* Se quiser que o texto "COMPRAR" apareça sempre no celular: */
+  .btn-text {
+    display: none; /* Esconde o texto no mobile para manter o visual limpo */
+  }
+
+  .btn-icon {
+    font-size: 22px; /* Ícone de "+" maior para facilitar o toque */
+  }
+
+  /* Desativar o efeito de translação no hover para evitar bugs visuais no touch */
+  .product-card:hover .img-wrapper {
+    transform: none;
+  }
+}
+
+/* Ajuste para telas muito pequenas (ex: iPhone SE) */
+@media (max-width: 400px) {
+  .img-wrapper {
+    height: 180px;
+  }
+  
+  .price-and-button-row {
+    flex-direction: column; /* Empilha preço e botão se ficar muito apertado */
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .btn-buy {
+    width: 100%; /* Botão ocupa a largura total do card */
+  }
 }

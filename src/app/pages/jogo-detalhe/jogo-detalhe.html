@@ -1,23 +1,21 @@
-<div class="container mt-5">
+<div class="container mt-5 page-detalhe">
   <div class="row">
     
     <!-- LADO ESQUERDO: GALERIA -->
     <div class="col-sm-12 col-md-6 text-center">
       <div class="foto-principal-moldura">
-        <!-- Foto principal muda conforme o indiceFoto -->
         <img [src]="obj.fotos[indiceFoto]" class="img-fluid main-img">
       </div>
 
-      <!-- Controles da Galeria (Setinhas e Miniaturas) -->
+      <!-- Controles da Galeria -->
       <div class="d-flex align-items-center justify-content-center mt-3">
         <button class="btn-seta" (click)="mudarFoto(-1)">‹</button>
         
         <div class="miniaturas-container d-flex mx-2">
           @for (foto of obj.fotos; track $index) {
-            <img [src]="foto" 
-                 class="img-miniatura" 
-                 [class.ativa]="$index === indiceFoto"
-                 (click)="indiceFoto = $index">
+            <div class="miniatura-wrapper" [class.ativa]="$index === indiceFoto" (click)="indiceFoto = $index">
+              <img [src]="foto" class="img-miniatura">
+            </div>
           }
         </div>
 
@@ -28,58 +26,55 @@
     <!-- LADO DIREITO: INFORMAÇÕES -->
     <div class="col-sm-12 col-md-6">
       <h1 class="titulo-jogo">{{obj.nome}}</h1>
-      <p class="sku-texto">SKU: 000{{obj.id}}LUDO</p>
+      <p class="sku-texto">ITEM ID: 000{{obj.id}}</p>
       
       <div class="categoria-box mt-3">
-        <strong>Categoria:</strong> Tabuleiro, Estratégia, Família
+        <span class="tag-categoria">Tabuleiro</span>
+        <span class="tag-categoria">Estratégia</span>
       </div>
 
       <div class="preco-container mt-4">
-        <span class="preco-por">por</span>
-        <h2 class="preco-valor">R$ 325,00</h2> <!-- Aqui você usaria {{obj.preco}} -->
+        <span class="preco-label">CUSTO:</span>
+        <h2 class="preco-valor">R$ {{obj.preco | number:'1.2-2'}}</h2>
       </div>
 
-      <button class="btn-comprar-ludos mt-3" (click)="comprar()">COMPRAR</button>
+      <button class="btn-comprar-ludos mt-4" (click)="comprar()">ADICIONAR AO INVENTÁRIO</button>
     </div>
 
   </div>
 
-
+  <!-- SEÇÃO DE INFORMAÇÕES ABAIXO -->
   <div class="info-jogo-container">
-    <h2 class="sessao-titulo">INFORMAÇÕES DO JOGO</h2>
-    <hr class="sessao-linha">
+    <h2 class="sessao-titulo">LOG DE DADOS</h2>
+    <div class="sessao-linha"></div>
 
     <div class="detalhes-content">
-      <!-- Descrição principal -->
       <p class="detalhe-longo">{{obj.detalhes_longos}}</p>
 
-      <!-- Lista de Componentes -->
-      <div class="sessao-componentes">
-        <h4 class="subtitulo-detalhe">Componentes:</h4>
-        <ul class="lista-componentes">
-          @for (item of obj.componentes; track $index) {
-            <li>{{item}}</li>
-          }
-        </ul>
+      <div class="row">
+        <!-- Componentes -->
+        <div class="col-md-6 sessao-componentes">
+          <h4 class="subtitulo-detalhe">CONTEÚDO DA CAIXA:</h4>
+          <ul class="lista-componentes">
+            @for (item of obj.componentes; track $index) {
+              <li>{{item}}</li>
+            }
+          </ul>
+        </div>
+
+        <!-- Ficha Técnica -->
+        <div class="col-md-6">
+          <h4 class="subtitulo-detalhe">ATRIBUTOS:</h4>
+          <div class="ficha-tecnica">
+            <p><span>IDADE:</span> {{obj.especificacoes.idade}}</p>
+            <p><span>TEMPO:</span> {{obj.especificacoes.tempo}}</p>
+            <p><span>JOGADORES:</span> {{obj.min_jogadores}} - {{obj.max_jogadores}}</p>
+            <p><span>IDIOMA:</span> {{obj.especificacoes.idioma}}</p>
+            <p><span>EDITORA:</span> {{obj.especificacoes.editora}}</p>
+          </div>
+        </div>
       </div>
-
-      <!-- Ficha Técnica (Especificações) -->
-      <div class="ficha-tecnica">
-        <p><strong>-Idade:</strong> {{obj.especificacoes.idade}}</p>
-        <p><strong>-Tempo:</strong> {{obj.especificacoes.tempo}}</p>
-        <p><strong>-Jogadores:</strong> {{obj.min_jogadores}} - {{obj.max_jogadores}}</p>
-        <p><strong>-Idioma:</strong> {{obj.especificacoes.idioma}}</p>
-        <p><strong>-Lançamento:</strong> {{obj.especificacoes.lancamento}}</p>
-        <p><strong>-Editora:</strong> {{obj.especificacoes.editora}}</p>
-        <p><strong>-Designer:</strong> {{obj.especificacoes.designer}}</p>
-        <p><strong>-Mecânicas:</strong> {{obj.especificacoes.mecanicas}}</p>
-        <p><strong>-Perfil do jogo:</strong> {{obj.especificacoes.perfil}}</p>
-
-      </div>
-
-      <hr class="sessao-linha">
-      <br>
-
     </div>
   </div>
+  <br>
 </div>

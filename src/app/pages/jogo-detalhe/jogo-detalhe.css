@@ -1,134 +1,308 @@
+/* TÍTULOS E TEXTOS PRINCIPAIS */
 .titulo-jogo {
-  color: #00d4ff;
-  font-weight: bold;
-  text-transform: uppercase;
+  font-family: 'Press Start 2P', cursive;
+  color: #ffffff;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  text-shadow: 3px 3px #ff4ecd; /* Sombra rosa neon */
 }
 
+.sku-texto {
+  font-family: 'VT323', monospace;
+  color: #00CCFF;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+/* GALERIA E MOLDURA */
 .foto-principal-moldura {
-  border: 1px solid #eee;
-  padding: 20px;
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #00CCFF; /* Moldura neon azul */
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 204, 255, 0.2);
 }
 
 .main-img {
-  max-height: 400px;
+  max-height: 450px;
   object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
 }
 
-/* Miniaturas */
+/* MINIATURAS */
+.miniatura-wrapper {
+  padding: 5px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.miniatura-wrapper.ativa {
+  border-color: #ff4ecd; /* Miniatura selecionada fica rosa */
+  border-radius: 8px;
+}
+
 .img-miniatura {
   width: 60px;
   height: 60px;
-  border: 2px solid #ddd;
-  margin: 0 5px;
-  cursor: pointer;
-  border-radius: 5px;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
-.img-miniatura.ativa {
-  border-color: #00d4ff;
-}
-
-/* Botões */
+/* BOTÕES DE NAVEGAÇÃO DA FOTO */
 .btn-seta {
-  background: #f39c12;
+  background: #ff4ecd;
   color: white;
   border: none;
-  border-radius: 5px;
-  width: 40px;
-  height: 40px;
-  font-size: 24px;
+  font-family: 'Press Start 2P', cursive;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
 }
 
-.btn-comprar-ludos {
-  background-color: #c480e8;
-  color: white;
-  border: none;
-  padding: 15px 60px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  border-radius: 5px;
-  width: 100%;
+.btn-seta:hover {
+  background: #00CCFF;
+  transform: scale(1.1);
+}
+
+/* PREÇO E CATEGORIAS */
+.tag-categoria {
+  display: inline-block;
+  background: rgba(0, 204, 255, 0.1);
+  border: 1px solid #00CCFF;
+  color: #00CCFF;
+  padding: 5px 10px;
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.preco-label {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  color: #d1d1d1;
 }
 
 .preco-valor {
-  color: #00d4ff;
-  font-size: 3rem;
-  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  color: #22c55e; /* Verde "ganhei dinheiro" */
+  font-size: 2.2rem;
+  margin-top: 10px;
 }
 
+/* BOTÃO DE COMPRA ESTILO ARCADE */
+.btn-comprar-ludos {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #00CCFF;
+  color: #0f1021;
+  border: none;
+  padding: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.3s;
+  box-shadow: 0 5px 0 #0088aa; /* Sombra sólida de botão antigo */
+  margin-top: 20px;
+  border-radius: 12px;
+}
+
+.btn-comprar-ludos:hover {
+  background-color: #ff4ecd;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 0 #aa2277;
+  color: white;
+}
+
+/* SEÇÃO DE INFORMAÇÕES (LOG DE DADOS) */
 .info-jogo-container {
-  margin-top: 50px;
-  color: #ffffff;
-  font-family: 'Poppins', sans-serif; /* Aquela dica da fonte! */
+  margin-top: 80px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  border-radius: 20px;
+  border-left: 4px solid #ff4ecd;
 }
 
 .sessao-titulo {
-  font-weight: 800;
-  font-size: 1.8rem;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  color: #ffffff;
 }
 
 .sessao-linha {
-  border: 0;
-  height: 2px;
-  background: linear-gradient(to right, #00CCFF, transparent); /* Linha com degradê azul */
+  height: 4px;
+  background: linear-gradient(to right, #ff4ecd, transparent);
+  width: 100%;
   margin-bottom: 30px;
-  opacity: 1;
+  border: none;
 }
 
 .detalhe-longo {
-  line-height: 1.8;
-  color: #d1d1d1;
-  font-size: 1rem;
-  margin-bottom: 30px;
+  font-family: 'VT323', monospace;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin-bottom: 40px;
   text-align: justify;
 }
 
 .subtitulo-detalhe {
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-  color: #ffffff;
-}
-
-.lista-componentes {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 40px;
-}
-
-.lista-componentes li {
-  margin-bottom: 8px;
-  color: #d1d1d1;
-  position: relative;
-  padding-left: 20px;
-}
-
-/* Criando o pontinho da lista customizado */
-.lista-componentes li::before {
-  content: "•";
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
   color: #00CCFF;
-  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* LISTA DE COMPONENTES */
+.lista-componentes li {
+  font-family: 'VT323', monospace;
+  font-size: 1.3rem;
+  color: #d1d1d1;
+  list-style: none;
+  padding-left: 25px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.lista-componentes li::before {
+  content: ">"; /* Seta de prompt de comando */
+  color: #ff4ecd;
   position: absolute;
   left: 0;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem;
 }
 
-.ficha-tecnica {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
+/* FICHA TÉCNICA / ATRIBUTOS */
 .ficha-tecnica p {
-  margin: 0;
-  font-size: 0.95rem;
+  font-family: 'VT323', monospace;
+  font-size: 1.3rem;
   color: #d1d1d1;
+  margin-bottom: 12px;
 }
 
-.ficha-tecnica strong {
-  color: #ffffff;
-  min-width: 100px;
+.ficha-tecnica span {
+  color: #00CCFF;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem;
+  margin-right: 10px;
   display: inline-block;
+  min-width: 120px;
+}
+
+/* RESPONSIVIDADE PARA DETALHES DO JOGO */
+@media (max-width: 768px) {
+  
+  /* Ajuste do Título Principal */
+  .titulo-jogo {
+    font-size: 3.0rem !important; /* Diminui um pouco para não quebrar muitas linhas */
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .sku-texto {
+    text-align: center;
+    display: block;
+    font-size: 1rem;
+  }
+
+  /* Ajuste da Moldura da Foto */
+  .foto-principal-moldura {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .main-img {
+    max-height: 300px; /* Reduz a altura da imagem principal no celular */
+  }
+
+  /* Galeria de Miniaturas */
+  .miniaturas-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .img-miniatura {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Preço e Categorias centralizados */
+  .categoria-box {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tag-categoria {
+    margin-right: 0;
+  }
+
+  .preco-container {
+    text-align: center;
+  }
+
+  .preco-valor {
+    font-size: 2.8rem !important; /* Valor bem grande como destaque central */
+  }
+
+  /* Botão de Compra Gigante no Mobile */
+  .btn-comprar-ludos {
+    padding: 25px 15px !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 30px;
+  }
+
+  /* Container de Informações (LOG DE DADOS) */
+  .info-jogo-container {
+    margin-top: 40px;
+    padding: 20px;
+    border-left: none;
+    border-top: 4px solid #ff4ecd; /* Borda no topo em vez da lateral */
+  }
+
+  .sessao-titulo {
+    font-size: 1rem !important;
+    text-align: center;
+  }
+
+  .detalhe-longo {
+    font-size: 1.2rem !important;
+    text-align: left; /* Melhor leitura no celular */
+  }
+
+  /* Listas e Ficha Técnica */
+  .subtitulo-detalhe {
+    font-size: 0.75rem !important;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .lista-componentes li {
+    font-size: 1.2rem !important;
+  }
+
+  .ficha-tecnica p {
+    font-size: 1.2rem !important;
+    display: flex;
+    flex-direction: column; /* Coloca o rótulo em cima do valor no mobile */
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .ficha-tecnica span {
+    min-width: unset;
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
 }

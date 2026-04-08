@@ -62,3 +62,162 @@
   background-color: linear-gradient(80deg, #159eee, #5a03d5ed);
 }
 
+/* --- Títulos da Marca --- */
+.brand-text h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem; /* Aumentei um pouco o tamanho */
+  margin: 0;
+  color: #ffffff;
+}
+
+.brand-text p {
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem; /* Deixei a tagline bem legível */
+  margin: 0;
+  color: #00CCFF;
+}
+
+/* --- Botões do Menu --- */
+.btn-nav {
+  /* Mantenha suas cores, bordas e brilhos originais aqui */
+  
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem; /* Tamanho 8-bit ideal para botões grandes */
+  
+  /* Aumentando o tamanho da caixa do botão */
+  padding: 15px 25px; 
+  
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+  white-space: nowrap; /* Impede que o texto e o emoji se separem */
+  cursor: pointer;
+}
+
+/* --- O Carrinho --- */
+.cart-icon {
+  font-family: Arial, sans-serif; /* Fonte padrão para o emoji não sumir */
+  font-size: 1.3rem; /* Emoji maior e destacado */
+  margin-right: 5px;
+}
+
+.topbar {
+  position: sticky;
+  top: 20px;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px; /* Ajuste para dar mais respiro interno */
+  margin: 20px 40px;
+  
+  /* --- MOLDURA IGUAL À BUSCA (IMAGEM 1) --- */
+  background: rgba(15, 16, 33, 0.6); /* Fundo escuro translúcido */
+  border: 2px solid #00CCFF; /* Azul neon sólido */
+  border-radius: 24px; /* Cantos arredondados iguais à moldura da busca */
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 20px rgba(0, 204, 255, 0.2); /* Brilho neon suave externo */
+}
+
+/* --- TÍTULO LUDOSFERA IGUAL AO FOOTER (IMAGEM 2) --- */
+.brand-text h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.4rem;
+  margin: 0;
+  color: #00CCFF; /* Azul ciano principal */
+  text-transform: uppercase;
+  /* Efeito de sombra rosa deslocada idêntico ao footer */
+  text-shadow: 3px 3px #ff4ecd; 
+  letter-spacing: 2px;
+}
+
+.brand-text p {
+  font-family: 'VT323', monospace;
+  font-size: 2.0rem;
+  margin: 4px 0 0;
+  color: #ffffff; /* Texto branco para contraste */
+  text-transform: lowercase;
+}
+
+/* --- BOTÕES DO MENU (MAIORES E ALINHADOS) --- */
+.btn-nav {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  padding: 18px 25px; /* Botões grandes e imponentes */
+  border-radius: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-nav:hover {
+  background: rgba(0, 204, 255, 0.1);
+  border: 1px solid #00CCFF;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 204, 255, 0.3);
+}
+
+/* Carrinho com destaque */
+.cart {
+  background: linear-gradient(135deg, #00CCFF, #c480e8);
+  color: #0f1021;
+}
+
+.cart-icon {
+  font-family: Arial, sans-serif; /* Garante que o emoji 🛒 apareça */
+  font-size: 1.2rem;
+}
+
+/* RESPONSIVIDADE PARA CELULAR */
+@media (max-width: 768px) {
+  .topbar {
+    margin: 10px; /* Reduz a margem externa para ganhar espaço */
+    padding: 15px; /* Reduz o padding interno */
+    flex-direction: column; /* Empilha o Logo e o Menu se necessário */
+    gap: 15px;
+    border-radius: 15px;
+  }
+
+  /* DIMINUINDO O LOGO NO CELULAR */
+  .logo-wrapper img {
+    width: 80px; /* Reduzimos o tamanho do logo significativamente */
+    height: auto;
+  }
+
+  .brand-container {
+    gap: 10px; /* Diminui o espaço entre a imagem e o texto */
+  }
+
+  /* AJUSTANDO OS TEXTOS DA MARCA */
+  .brand-text h1 {
+    font-size: 0.9rem; /* Diminui o "LUDOSFERA" para caber em uma linha */
+    text-shadow: 2px 2px #ff4ecd; /* Sombra um pouco menor para clareza */
+  }
+
+  .brand-text p {
+    font-size: 0.7rem; /* Tagline menor */
+  }
+
+  /* AJUSTANDO O MENU */
+  .menu {
+    width: 100%; /* Faz o menu ocupar a largura toda */
+    justify-content: center; /* Centraliza os botões */
+    gap: 8px; /* Botões mais próximos para caberem */
+  }
+
+  .btn-nav {
+    padding: 10px 12px; /* Botões menores no celular */
+    font-size: 0.5rem; /* Fonte menor para não quebrar */
+  }
+
+  .cart-icon {
+    font-size: 1rem; /* Emoji um pouco menor */
+  }
+}

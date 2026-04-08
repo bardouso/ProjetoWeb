@@ -2,41 +2,104 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 70vh;
+  min-height: 85vh; /* Respiro vertical */
+  padding: 20px;
 }
 
 .cadastro-box {
-  width: 500px;
-  padding: 10px;
-  border-radius: 20px;
-
-  backdrop-filter: blur(10px);
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.2);
-
+  width: 100%;
+  max-width: 500px;
+  padding: 40px;
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
+}
+
+h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-align: center;
+  line-height: 1.6;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
 
-.form-group input,
-.form-group textarea {
+label {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.65rem;
+  color: #d1d1d1;
+  text-transform: uppercase;
+}
+
+input, textarea {
   width: 100%;
-  padding: 10px;
-  border-radius: 10px;
-  border: none;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #00CCFF; /* Azul Neon */
+  border-radius: 12px;
+  color: #fff;
+  font-family: 'VT323', monospace; /* Fonte quadradinha legível */
+  font-size: 1.2rem;
+  outline: none;
+  transition: 0.3s ease;
 }
 
+textarea {
+  resize: none;
+}
+
+input:focus, textarea:focus {
+  border-color: #ff4ecd; /* Rosa Neon ao focar */
+  box-shadow: 0 0 15px rgba(255, 78, 205, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Botão seguindo o padrão 8-bit */
 button {
   margin-top: 10px;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 15px;
+  border-radius: 12px;
   border: none;
-  background: linear-gradient(45deg, #7b2ff7, #f107a3);
-  color: white;
+  background: #00CCFF;
+  color: #0f1021;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ff4ecd;
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(255, 78, 205, 0.6);
+}
+
+.login-link {
+  text-align: center;
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  color: #d1d1d1;
+  margin-top: 10px;
+}
+
+.login-link span {
+  color: #00CCFF;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.login-link span:hover {
+  color: #ff4ecd;
 }
