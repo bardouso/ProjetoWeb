@@ -1,0 +1,25 @@
+<div class='carrinho-page'>
+    <div class='carrinho-container'>
+        <h2>Seu Carrinho</h2>
+        <div *ngIf='mensagem' class='alerta-vazio'>{{mensagem}}</div>
+        <table *ngIf='lista.length'>
+            <tr>
+                <th>Produto</th>
+                <th>Qtd</th>
+                <th>Subtotal</th>
+                <th>Ações</th>
+            </tr>
+            <tr *ngFor='let obj of lista'>
+                <td>{{obj.produto.nome}}</td>
+                <td><button (click)='diminuir(obj)'>-</button> {{obj.quantidade}} <button
+                        (click)='aumentar(obj)'>+</button></td>
+                <td>R$ {{obj.produto.preco*obj.quantidade}}</td>
+                <td><button (click)='remover(obj)'>Remover</button></td>
+            </tr>
+        </table>
+        <div *ngIf='lista.length' class='footer-carrinho'>
+            <h3>Total: R$ {{total}}</h3><button (click)='limpar()'>Limpar</button><button
+                routerLink='/finalizar-compra'>Finalizar Pedido</button>
+        </div>
+    </div>
+</div>

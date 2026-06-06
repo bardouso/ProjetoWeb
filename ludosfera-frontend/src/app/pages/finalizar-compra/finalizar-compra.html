@@ -1,0 +1,11 @@
+<div class='box'>
+    <h2>Finalizar Compra</h2>
+    <div *ngFor='let i of lista'>{{i.produto.nome}} - {{i.quantidade}}x - R$ {{i.produto.preco*i.quantidade}}</div>
+    <h3>Total: R$ {{total}}</h3><input [(ngModel)]='nomeCliente' placeholder='Nome'><input [(ngModel)]='emailCliente'
+        placeholder='Email'><textarea [(ngModel)]='enderecoEntrega' placeholder='Endereço'></textarea><select
+        [(ngModel)]='formaPagamento'>
+        <option>Pix</option>
+        <option>Cartão</option>
+        <option>Boleto</option>
+    </select><button (click)='finalizar()'>Confirmar Pedido</button>
+</div>

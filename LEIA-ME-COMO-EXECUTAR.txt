@@ -1,0 +1,21 @@
+1) BACKEND
+Abra terminal em ludosfera-backend e rode:
+mvn spring-boot:run
+
+2) FRONTEND
+Abra outro terminal em ludosfera-frontend e rode:
+npm install
+npm start
+
+3) Acesse:
+http://localhost:4200
+
+Banco usado por padrão: H2 em arquivo, sem senha.
+Console do banco: http://localhost:8080/h2-console
+JDBC URL: jdbc:h2:file:./data/ludosfera_db
+User: sa
+Password: deixe vazio
+
+Login admin criado automaticamente:
+admin@admin.com
+admin

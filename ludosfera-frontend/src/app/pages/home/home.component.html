@@ -1,0 +1,53 @@
+<main class="home-page">
+    <section class="hero">
+        <div class="hero-text"><span class="tag">✨ Diversão, estratégia e aventura</span>
+            <h2><span>A sua loja principal de jogos de tabuleiro</span></h2>
+            <p>Encontre jogos para comprar, descubra novidades, promoções e monte a experiência perfeita.</p>
+            <div class="hero-stats">
+                <div class="stat-card"><strong>+1.000</strong><span>Clientes atendidos</span></div>
+                <div class="stat-card"><strong>Fácil</strong><span>Compra rápida e segura</span></div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-card card-1">♟️ Estratégia</div>
+            <div class="floating-card card-2">🎉 Party Games</div>
+            <div class="floating-card card-3">👨‍👩‍👧‍👦 Família</div>
+            <div class="d20-container">
+                <div class="d20-3d">
+                    <div class="d20-face front">1</div>
+                    <div class="d20-face back">2</div>
+                    <div class="d20-face right">3</div>
+                    <div class="d20-face left">4</div>
+                    <div class="d20-face top">5</div>
+                    <div class="d20-face bottom">6</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="search-box">
+        <h3>Encontre seu próximo jogo</h3>
+        <div class="search-bar"><input [(ngModel)]="termoBusca" (keyup.enter)="buscar()"
+                placeholder="Ex: Catan, Dixit, Ticket to Ride..."><button (click)="buscar()">Buscar</button></div>
+    </section>
+    <section>
+        <div class="section-title">
+            <h3>Destaques da semana</h3>
+        </div>
+        <div class="highlight-grid">
+            <article class="game-card"><span class="badge">TOP 1</span>
+                <h4>Catan</h4>
+                <p>Estratégia e trocas em uma ilha de desafios.</p><button class="btn-buy" routerLink="/jogos">Ver
+                    jogo</button>
+            </article>
+            <article class="game-card"><span class="badge">HOT</span>
+                <h4>Dixit</h4>
+                <p>Arte e imaginação em uma experiência única.</p><button class="btn-buy" routerLink="/jogos">Ver
+                    jogo</button>
+            </article>
+            <article class="game-card"><span class="badge">NEW</span>
+                <h4>Ticket to Ride</h4>
+                <p>Construa rotas pelo mapa.</p><button class="btn-buy" routerLink="/jogos">Ver jogo</button>
+            </article>
+        </div>
+    </section>
+</main>

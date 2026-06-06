@@ -1,0 +1,13 @@
+<header class="topbar">
+    <div class="brand" routerLink="/home">
+        <div class="logo"><img src="Logo_LudosFera.png" alt="Logo Ludosfera"></div>
+        <div class="brand-text">
+            <h1>Ludosfera</h1>
+            <p>Loja de jogos de tabuleiro</p>
+        </div>
+    </div>
+    <nav class="menu"><button routerLink="/home">Início</button><button *ngIf="!estaLogado()"
+            routerLink="/login">Login</button><button routerLink="/jogos">Jogos</button><button
+            routerLink="/cadastro">Portal do Cliente</button><button class="cart-button" routerLink="/carrinho">🛒
+            Carrinho</button><button *ngIf="estaLogado()" (click)="logout()">Logout</button></nav>
+</header>

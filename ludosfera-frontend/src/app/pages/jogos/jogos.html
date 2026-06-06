@@ -1,0 +1,20 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-5" *ngFor="let obj of lista">
+            <div class="product-card">
+                <div class="img-wrapper"><img [src]="obj.fotos[0] || 'Imagens dos Jogos/sem-foto.png'"
+                        class="img-fluid"></div>
+                <div class="product-info">
+                    <h5 class="product-title">{{obj.nome}}</h5>
+                    <div class="price-and-button-row">
+                        <div><span class="price-main">R${{obj.preco | number:'1.2-2'}}</span>
+                            <div class="player-info"><span
+                                    class="player-count">{{obj.minJogadores}}-{{obj.maxJogadores}} P</span></div>
+                        </div><button class="btn-buy" [routerLink]="['/jogo-detalhe', obj.id]"><span
+                                class="btn-text">DETALHES</span><span class="btn-icon">+</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

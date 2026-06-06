@@ -1,0 +1,47 @@
+.box {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 40px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid rgba(255, 255, 255, .15)
+}
+
+h2 {
+    font-family: 'Press Start 2P';
+    font-size: 1.2rem;
+    text-align: center
+}
+
+input,
+textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 14px;
+    background: rgba(255, 255, 255, .1);
+    border: 2px solid #00CCFF;
+    border-radius: 12px;
+    color: white;
+    font-family: 'VT323';
+    font-size: 1.2rem
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: #00CCFF;
+    border: 0;
+    border-radius: 12px;
+    font-family: 'Press Start 2P'
+}
+
+p {
+    font-family: 'VT323';
+    font-size: 1.2rem;
+    text-align: center
+}
+
+span {
+    color: #00CCFF;
+    cursor: pointer
+}

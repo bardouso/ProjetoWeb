@@ -1,0 +1,11 @@
+<div class='box'>
+    <h2>Cadastro de Cliente</h2>
+    <input [(ngModel)]='obj.nome' placeholder='Nome'>
+    <input [(ngModel)]='obj.email' placeholder='Email'>
+    <input [(ngModel)]='obj.documento' placeholder='CPF ou RG'>
+    <input [(ngModel)]='obj.senha' type='password' placeholder='Senha'>
+    <textarea [(ngModel)]='obj.logradouro' placeholder='Endereço'>
+
+    </textarea><button (click)='cadastrar()'>Cadastrar</button>
+    <p>Já tem conta? <span routerLink='/login'>Faça Login</span></p>
+</div>

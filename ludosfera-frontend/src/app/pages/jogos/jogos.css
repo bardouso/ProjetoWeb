@@ -1,0 +1,82 @@
+.product-card {
+    background: transparent;
+    transition: .3s;
+    font-family: 'Press Start 2P'
+}
+
+.img-wrapper {
+    background: rgba(255, 255, 255, .05);
+    border: 2px solid #00CCFF;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 320px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 15px rgba(0, 204, 255, .2);
+    overflow: hidden
+}
+
+.product-card:hover .img-wrapper {
+    border-color: #ff4ecd;
+    box-shadow: 0 0 20px rgba(255, 78, 205, .4);
+    transform: translateY(-5px)
+}
+
+.img-wrapper img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain
+}
+
+.product-title {
+    font-size: 1rem;
+    color: #fff;
+    text-shadow: 2px 2px #ff4ecd;
+    text-transform: uppercase;
+    line-height: 1.4;
+    height: 55px
+}
+
+.price-and-button-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between
+}
+
+.price-main {
+    font-size: 1.2rem;
+    color: #22c55e
+}
+
+.player-count {
+    font-family: 'VT323';
+    font-size: 2rem;
+    color: #bdc3c7
+}
+
+.btn-buy {
+    background: #00CCFF;
+    color: #0f1021;
+    border: 0;
+    height: 45px;
+    min-width: 45px;
+    border-radius: 10px;
+    font-family: 'Press Start 2P';
+    font-size: .6rem
+}
+
+.btn-text {
+    display: none
+}
+
+.product-card:hover .btn-text {
+    display: inline
+}
+
+.product-card:hover .btn-buy {
+    background: #ff4ecd;
+    color: white;
+    min-width: 110px
+}

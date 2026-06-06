@@ -1,0 +1,28 @@
+<div class='container mt-5 page-detalhe'>
+    <div class='row'>
+        <div class='col-md-6 text-center'>
+            <div class='foto-principal-moldura'><img [src]='obj.fotos[indiceFoto]' class='img-fluid main-img'></div>
+            <div class='d-flex justify-content-center mt-3'><button class='btn-seta' (click)='mudarFoto(-1)'>‹</button>
+                <div class='miniatura-wrapper' *ngFor='let f of obj.fotos; let i=index' [class.ativa]='i===indiceFoto'
+                    (click)='indiceFoto=i'><img [src]='f' class='img-miniatura'></div><button class='btn-seta'
+                    (click)='mudarFoto(1)'>›</button>
+            </div>
+        </div>
+        <div class='col-md-6'>
+            <h1 class='titulo-jogo'>{{obj.nome}}</h1>
+            <p class='sku-texto'>ITEM ID: 000{{obj.id}}</p><span class='tag-categoria'>{{obj.categoria}}</span>
+            <h2 class='preco-valor'>R$ {{obj.preco | number:'1.2-2'}}</h2><button class='btn-comprar-ludos'
+                (click)='comprar()'>ADICIONAR AO INVENTÁRIO</button>
+        </div>
+    </div>
+    <div class='info-jogo-container'>
+        <h2 class='sessao-titulo'>LOG DE DADOS</h2>
+        <p class='detalhe-longo'>{{obj.detalhesLongos}}</p>
+        <h4 class='subtitulo-detalhe'>CONTEÚDO DA CAIXA:</h4>
+        <ul>
+            <li *ngFor='let c of obj.componentes'>{{c}}</li>
+        </ul>
+        <p><b>IDADE:</b> {{obj.idade}} | <b>TEMPO:</b> {{obj.tempo}} | <b>JOGADORES:</b>
+            {{obj.minJogadores}}-{{obj.maxJogadores}}</p>
+    </div>
+</div>

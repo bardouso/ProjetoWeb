@@ -1,0 +1,17 @@
+A:\Projetos\ludosfera-projeto-completo\ludosfera-backend\src\main\java\com\ludosfera\backend\config\CorsConfig.java
+A:\Projetos\ludosfera-projeto-completo\ludosfera-backend\src\main\java\com\ludosfera\backend\config\DataLoader.java
+A:\Projetos\ludosfera-projeto-completo\ludosfera-backend\src\main\java\com\ludosfera\backend\controller\ClienteController.java
+A:\Projetos\ludosfera-projeto-completo\ludosfera-backend\src\main\java\com\ludosfera\backend\controller\PedidoController.java
+A:\Projetos\ludosfera-projeto-completo\ludosfera-backend\src\main\java\com\ludosfera\backend\controller\ProdutoController.java
+A:\Projetos\ludosfera-projeto-completo\ludosfera-backend\src\main\java\com\ludosfera\backend\dto\FinalizarPedidoRequest.java
+A:\Projetos\ludosfera-projeto-completo\ludosfera-backend\src\main\java\com\ludosfera\backend\dto\LoginRequest.java
+A:\Projetos\ludosfera-projeto-completo\ludosfera-backend\src\main\java\com\ludosfera\backend\dto\RecuperarSenhaRequest.java
+A:\Projetos\ludosfera-projeto-completo\ludosfera-backend\src\main\java\com\ludosfera\backend\dto\RedefinirSenhaRequest.java
+A:\Projetos\ludosfera-projeto-completo\ludosfera-backend\src\main\java\com\ludosfera\backend\LudosferaBackendApplication.java
+A:\Projetos\ludosfera-projeto-completo\ludosfera-backend\src\main\java\com\ludosfera\backend\model\Cliente.java
+A:\Projetos\ludosfera-projeto-completo\ludosfera-backend\src\main\java\com\ludosfera\backend\model\ItemPedido.java
+A:\Projetos\ludosfera-projeto-completo\ludosfera-backend\src\main\java\com\ludosfera\backend\model\Pedido.java
+A:\Projetos\ludosfera-projeto-completo\ludosfera-backend\src\main\java\com\ludosfera\backend\model\Produto.java
+A:\Projetos\ludosfera-projeto-completo\ludosfera-backend\src\main\java\com\ludosfera\backend\repository\ClienteRepository.java
+A:\Projetos\ludosfera-projeto-completo\ludosfera-backend\src\main\java\com\ludosfera\backend\repository\PedidoRepository.java
+A:\Projetos\ludosfera-projeto-completo\ludosfera-backend\src\main\java\com\ludosfera\backend\repository\ProdutoRepository.java

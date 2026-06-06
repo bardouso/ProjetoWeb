@@ -1,0 +1,99 @@
+.topbar {
+    position: sticky;
+    top: 20px;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 30px;
+    margin: 20px 40px;
+    background: rgba(15, 16, 33, .6);
+    border: 2px solid #00CCFF;
+    border-radius: 24px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 20px rgba(0, 204, 255, .2)
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer
+}
+
+.logo img {
+    width: 120px;
+    height: auto
+}
+
+.brand-text h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.4rem;
+    margin: 0;
+    color: #00CCFF;
+    text-shadow: 3px 3px #ff4ecd;
+    text-transform: uppercase
+}
+
+.brand-text p {
+    font-family: 'VT323', monospace;
+    font-size: 1.7rem;
+    margin: 4px 0 0;
+    color: #fff
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px
+}
+
+.menu button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: .65rem;
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255, 255, 255, .05);
+    color: #fff;
+    transition: .3s
+}
+
+.menu button:hover {
+    background: rgba(0, 204, 255, .15);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 204, 255, .3)
+}
+
+.cart-button {
+    background: linear-gradient(80deg, #159eee, #5a03d5ed) !important
+}
+
+@media(max-width:768px) {
+    .topbar {
+        margin: 10px;
+        flex-direction: column
+    }
+
+    .logo img {
+        width: 80px
+    }
+
+    .brand-text h1 {
+        font-size: .9rem
+    }
+
+    .brand-text p {
+        font-size: .9rem
+    }
+
+    .menu {
+        justify-content: center
+    }
+
+    .menu button {
+        font-size: .5rem;
+        padding: 10px
+    }
+}

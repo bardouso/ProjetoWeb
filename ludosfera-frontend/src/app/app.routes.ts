@@ -1,0 +1,10 @@
+import { Routes } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
+import { JogosComponent } from './pages/jogos/jogos';
+import { JogoDetalheComponent } from './pages/jogo-detalhe/jogo-detalhe';
+import { Carrinho } from './pages/carrinho/carrinho';
+import { Cadastro } from './pages/cadastro/cadastro';
+import { Login } from './pages/login/login';
+import { Recupera } from './pages/recupera/recupera';
+import { FinalizarCompra } from './pages/finalizar-compra/finalizar-compra';
+export const routes: Routes = [{ path: '', redirectTo: 'home', pathMatch: 'full' }, { path: 'home', component: HomeComponent }, { path: 'jogos', component: JogosComponent }, { path: 'jogo-detalhe/:id', component: JogoDetalheComponent }, { path: 'carrinho', component: Carrinho }, { path: 'cadastro', component: Cadastro }, { path: 'login', component: Login }, { path: 'recupera', component: Recupera }, { path: 'finalizar-compra', component: FinalizarCompra }];

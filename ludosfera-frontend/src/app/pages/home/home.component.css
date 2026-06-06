@@ -1,0 +1,232 @@
+.home-page {
+    min-height: 100vh;
+    padding: 60px 5%;
+    max-width: 1300px;
+    margin: 0 auto
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 60px
+}
+
+.tag {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid #00CCFF;
+    color: #ffe59d;
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem
+}
+
+.hero-text h2 {
+    font-family: 'Press Start 2P';
+    font-size: 2rem;
+    line-height: 1.4
+}
+
+.hero-text h2 span {
+    background: linear-gradient(90deg, #ff9de1, #7ad7ff);
+    -webkit-background-clip: text;
+    color: transparent
+}
+
+.hero-text p,
+.stat-card span,
+.game-card p {
+    font-family: 'VT323';
+    font-size: 1.4rem;
+    color: #d8dcff
+}
+
+.hero-stats {
+    display: flex;
+    gap: 20px
+}
+
+.stat-card,
+.game-card {
+    padding: 25px;
+    background: rgba(255, 255, 255, .05);
+    border: 2px solid rgba(255, 255, 255, .1);
+    border-radius: 15px
+}
+
+.stat-card strong {
+    font-family: 'Press Start 2P';
+    color: #00CCFF
+}
+
+.hero-visual {
+    position: relative;
+    height: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.d20-container {
+    perspective: 1000px;
+    width: 120px;
+    height: 120px
+}
+
+.d20-3d {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateD20 15s infinite linear
+}
+
+.d20-face {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: rgba(0, 204, 255, .1);
+    border: 2px solid #00CCFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2P';
+    color: #00CCFF
+}
+
+.front {
+    transform: rotateY(0) translateZ(60px)
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(60px)
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(60px)
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(60px)
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(60px)
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(60px)
+}
+
+@keyframes rotateD20 {
+    to {
+        transform: rotateX(360deg) rotateY(720deg)
+    }
+}
+
+.floating-card {
+    position: absolute;
+    padding: 10px 15px;
+    background: rgba(15, 16, 33, .8);
+    border: 1px solid #ff4ecd;
+    font-family: 'VT323';
+    font-size: 1.1rem
+}
+
+.card-1 {
+    top: 10%;
+    left: 0
+}
+
+.card-2 {
+    top: 30%;
+    right: 0
+}
+
+.card-3 {
+    bottom: 10%;
+    left: 20%
+}
+
+.search-box {
+    padding: 40px;
+    background: rgba(15, 16, 33, .6);
+    border: 2px solid #00CCFF;
+    border-radius: 24px;
+    margin-bottom: 60px
+}
+
+.search-box h3,
+.section-title h3,
+.game-card h4 {
+    font-family: 'Press Start 2P';
+    color: #fff
+}
+
+.search-bar {
+    display: flex
+}
+
+.search-bar input {
+    flex: 1;
+    background: rgba(255, 255, 255, .05);
+    border: 2px solid #00CCFF;
+    border-radius: 12px 0 0 12px;
+    padding: 18px 25px;
+    color: white;
+    font-family: 'VT323';
+    font-size: 1.4rem
+}
+
+.search-bar button,
+.btn-buy {
+    background: #00CCFF;
+    color: #0f1021;
+    border: 0;
+    border-radius: 0 12px 12px 0;
+    padding: 0 35px;
+    font-family: 'Press Start 2P';
+    font-size: .8rem
+}
+
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px
+}
+
+.badge {
+    font-family: 'Press Start 2P';
+    background: #f00;
+    color: #fff;
+    padding: 8px 15px
+}
+
+.btn-buy {
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 10px
+}
+
+@media(max-width:900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center
+    }
+
+    .hero-stats {
+        justify-content: center
+    }
+
+    .search-bar {
+        flex-direction: column
+    }
+
+    .search-bar input,
+    .search-bar button {
+        border-radius: 12px;
+        margin: 4px 0;
+        padding: 15px
+    }
+}

@@ -1,0 +1,52 @@
+.carrinho-page {
+    padding: 40px 20px;
+    min-height: 80vh
+}
+
+.carrinho-container {
+    max-width: 1000px;
+    margin: auto;
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 24px;
+    padding: 40px
+}
+
+h2 {
+    font-family: 'Press Start 2P';
+    text-align: center;
+    text-shadow: 2px 2px #ff4ecd
+}
+
+table {
+    width: 100%;
+    font-family: 'VT323';
+    font-size: 1.4rem;
+    color: white
+}
+
+td,
+th {
+    padding: 14px
+}
+
+button {
+    background: #00CCFF;
+    border: 0;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 4px;
+    font-family: 'Press Start 2P';
+    font-size: .6rem
+}
+
+.footer-carrinho {
+    text-align: right
+}
+
+.alerta-vazio {
+    font-family: 'VT323';
+    font-size: 1.5rem;
+    text-align: center;
+    color: #ff4e4e
+}

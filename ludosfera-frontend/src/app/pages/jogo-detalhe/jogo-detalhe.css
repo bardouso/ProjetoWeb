@@ -1,0 +1,96 @@
+.titulo-jogo {
+    font-family: 'Press Start 2P';
+    color: #fff;
+    font-size: 1.8rem;
+    text-shadow: 3px 3px #ff4ecd
+}
+
+.sku-texto {
+    font-family: 'VT323';
+    color: #00CCFF;
+    font-size: 1.2rem
+}
+
+.foto-principal-moldura {
+    background: rgba(255, 255, 255, .05);
+    border: 2px solid #00CCFF;
+    padding: 30px;
+    border-radius: 20px
+}
+
+.main-img {
+    max-height: 450px;
+    object-fit: contain
+}
+
+.img-miniatura {
+    width: 60px;
+    height: 60px;
+    object-fit: cover
+}
+
+.miniatura-wrapper {
+    padding: 5px;
+    border: 2px solid transparent;
+    cursor: pointer
+}
+
+.miniatura-wrapper.ativa {
+    border-color: #ff4ecd
+}
+
+.btn-seta {
+    background: #ff4ecd;
+    color: white;
+    border: 0;
+    width: 45px;
+    height: 45px
+}
+
+.tag-categoria {
+    background: rgba(0, 204, 255, .1);
+    border: 1px solid #00CCFF;
+    color: #00CCFF;
+    padding: 5px 10px;
+    font-family: 'VT323';
+    font-size: 1.1rem
+}
+
+.preco-valor {
+    font-family: 'Press Start 2P';
+    color: #22c55e;
+    font-size: 2rem;
+    margin-top: 25px
+}
+
+.btn-comprar-ludos {
+    font-family: 'Press Start 2P';
+    background: #00CCFF;
+    color: #0f1021;
+    border: 0;
+    padding: 20px;
+    width: 100%;
+    border-radius: 12px
+}
+
+.info-jogo-container {
+    margin-top: 60px;
+    background: rgba(0, 0, 0, .2);
+    padding: 40px;
+    border-radius: 20px;
+    border-left: 4px solid #ff4ecd
+}
+
+.sessao-titulo,
+.subtitulo-detalhe {
+    font-family: 'Press Start 2P';
+    color: #fff
+}
+
+.detalhe-longo,
+li,
+p {
+    font-family: 'VT323';
+    font-size: 1.3rem;
+    color: #e0e0e0
+}
