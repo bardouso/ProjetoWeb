@@ -1,47 +1,140 @@
 .box {
-    max-width: 500px;
-    margin: 60px auto;
-    padding: 40px;
-    border-radius: 24px;
-    background: rgba(255, 255, 255, .05);
-    border: 1px solid rgba(255, 255, 255, .15)
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 40px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, .05);
+  border: 1px solid rgba(255, 255, 255, .15);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .3);
+  backdrop-filter: blur(12px);
 }
 
+/* Título Login */
 h2 {
-    font-family: 'Press Start 2P';
-    font-size: 1.2rem;
-    text-align: center
+  font-family: 'Press Start 2P';
+  font-size: 1.2rem;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 28px;
+  text-shadow: 2px 2px #ff4ecd;
 }
 
+/* Campos */
 input,
 textarea {
-    width: 100%;
-    margin: 10px 0;
-    padding: 14px;
-    background: rgba(255, 255, 255, .1);
-    border: 2px solid #00CCFF;
-    border-radius: 12px;
-    color: white;
-    font-family: 'VT323';
-    font-size: 1.2rem
+  width: 100%;
+  margin: 10px 0;
+  padding: 14px;
+  background: rgba(255, 255, 255, .1);
+  border: 2px solid #00CCFF;
+  border-radius: 12px;
+  color: white;
+  font-family: 'VT323';
+  font-size: 1.25rem;
+  outline: none;
+  transition: .3s ease;
 }
 
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, .55);
+}
+
+input:focus,
+textarea:focus {
+  border-color: #ff4ecd;
+  box-shadow: 0 0 15px rgba(255, 78, 205, .4);
+  background: rgba(255, 255, 255, .15);
+}
+
+/* Botão estilo arcade */
 button {
-    width: 100%;
-    padding: 15px;
-    background: #00CCFF;
-    border: 0;
-    border-radius: 12px;
-    font-family: 'Press Start 2P'
+  width: 100%;
+  padding: 15px;
+  margin: 12px 0 8px;
+  background: #00CCFF;
+  color: #0f1021;
+  border: 0;
+  border-radius: 12px;
+  font-family: 'Press Start 2P';
+  font-size: .75rem;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background .25s ease, color .25s ease;
+  box-shadow: 0 6px 0 #0088aa;
 }
 
-p {
-    font-family: 'VT323';
-    font-size: 1.2rem;
-    text-align: center
+/* Hover do botão */
+button:hover {
+  background: #ff4ecd;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #aa2277;
 }
 
+/* Animação de apertar */
+button:active {
+  transform: translateY(5px);
+  box-shadow: 0 1px 0 #006b88;
+}
+
+/* Botão enquanto carrega */
+button:disabled {
+  opacity: .75;
+  cursor: not-allowed;
+  transform: none;
+  background: #00CCFF;
+  color: #0f1021;
+  box-shadow: 0 4px 0 #0088aa;
+}
+
+/* Mensagem geral */
+.mensagem {
+  margin-top: 18px;
+  padding: 15px;
+  border-radius: 12px;
+  font-family: 'VT323';
+  font-size: 1.35rem;
+  text-align: center;
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, .1);
+  border: 2px solid rgba(255, 255, 255, .25);
+}
+
+/* Mensagem de sucesso */
+.mensagem.sucesso {
+  color: #ffffff !important;
+  background: rgba(34, 197, 94, .22);
+  border-color: #22c55e;
+  box-shadow: 0 0 18px rgba(34, 197, 94, .35);
+}
+
+/* Mensagem de erro */
+.mensagem.erro {
+  color: #ffffff !important;
+  background: rgba(239, 68, 68, .22);
+  border-color: #ef4444;
+  box-shadow: 0 0 18px rgba(239, 68, 68, .35);
+}
+
+/* Textos abaixo do botão */
+p,
+.texto-apoio {
+  font-family: 'VT323';
+  font-size: 1.25rem;
+  text-align: center;
+  color: #ffffff;
+  margin: 16px 0 0;
+}
+
+/* Links */
 span {
-    color: #00CCFF;
-    cursor: pointer
+  color: #00CCFF;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: .25s ease;
+}
+
+span:hover {
+  color: #ff4ecd;
+  text-shadow: 0 0 8px rgba(255, 78, 205, .8);
 }

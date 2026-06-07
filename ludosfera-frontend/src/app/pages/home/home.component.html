@@ -4,8 +4,8 @@
             <h2><span>A sua loja principal de jogos de tabuleiro</span></h2>
             <p>Encontre jogos para comprar, descubra novidades, promoções e monte a experiência perfeita.</p>
             <div class="hero-stats">
-                <div class="stat-card"><strong>+1.000</strong><span>Clientes atendidos</span></div>
-                <div class="stat-card"><strong>Fácil</strong><span>Compra rápida e segura</span></div>
+                <div class="stat-card"><strong>+1.000 </strong><br><span>Clientes atendidos</span></div>
+                <div class="stat-card"><strong>Fácil </strong><br><span>Compra rápida e segura</span></div>
             </div>
         </div>
         <div class="hero-visual">
@@ -24,11 +24,51 @@
             </div>
         </div>
     </section>
+    
     <section class="search-box">
-        <h3>Encontre seu próximo jogo</h3>
-        <div class="search-bar"><input [(ngModel)]="termoBusca" (keyup.enter)="buscar()"
-                placeholder="Ex: Catan, Dixit, Ticket to Ride..."><button (click)="buscar()">Buscar</button></div>
-    </section>
+  <h3>Encontre seu próximo jogo</h3>
+
+  <div class="search-area">
+    <div class="search-bar">
+      <input
+        [(ngModel)]="termoBusca"
+        (ngModelChange)="aoDigitarBusca()"
+        (keyup.enter)="buscar()"
+        (blur)="esconderSugestoesComDelay()"
+        placeholder="Ex: Catan, Dixit, Ticket to Ride..."
+      >
+
+      <button 
+        type="button" 
+        class="btn-search"
+        (click)="buscar()"
+      >
+        Buscar
+      </button>
+    </div>
+
+    <div 
+      class="sugestoes-box"
+      *ngIf="mostrandoSugestoes"
+    >
+      <div 
+        class="sugestao-item"
+        *ngFor="let jogo of sugestoes"
+        (mousedown)="abrirJogo(jogo)"
+      >
+        <div class="sugestao-info">
+          <strong>{{ jogo.nome }}</strong>
+          <span>{{ jogo.categoria }}</span>
+        </div>
+
+        <div class="sugestao-preco">
+          R$ {{ jogo.preco | number:'1.2-2' }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
     <section>
         <div class="section-title">
             <h3>Destaques da semana</h3>
@@ -36,17 +76,15 @@
         <div class="highlight-grid">
             <article class="game-card"><span class="badge">TOP 1</span>
                 <h4>Catan</h4>
-                <p>Estratégia e trocas em uma ilha de desafios.</p><button class="btn-buy" routerLink="/jogos">Ver
-                    jogo</button>
+                <p>Estratégia e trocas em uma ilha de desafios.</p><button class="btn-buy" routerLink="/jogo-detalhe/1">Ver jogo</button>
             </article>
             <article class="game-card"><span class="badge">HOT</span>
                 <h4>Dixit</h4>
-                <p>Arte e imaginação em uma experiência única.</p><button class="btn-buy" routerLink="/jogos">Ver
-                    jogo</button>
+                <p>Arte e imaginação em uma experiência única.</p><button class="btn-buy" routerLink="/jogo-detalhe/2">Ver jogo</button>
             </article>
             <article class="game-card"><span class="badge">NEW</span>
                 <h4>Ticket to Ride</h4>
-                <p>Construa rotas pelo mapa.</p><button class="btn-buy" routerLink="/jogos">Ver jogo</button>
+                <p>Construa rotas pelo mapa.</p><button class="btn-buy" routerLink="/jogo-detalhe/3">Ver jogo</button>
             </article>
         </div>
     </section>

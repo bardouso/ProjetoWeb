@@ -1,1 +1,45 @@
-<div class='box'><h2>Recuperar Senha</h2><input [(ngModel)]='email' placeholder='Email'><button (click)='enviarCodigo()'>Enviar Código</button><input [(ngModel)]='codigo' placeholder='Código'><input [(ngModel)]='novaSenha' type='password' placeholder='Nova senha'><button (click)='redefinirSenha()'>Alterar Senha</button><p>{{mensagem}}</p></div>
+<div class="box">
+  <h2>Recuperar Senha</h2>
+
+  <input 
+    [(ngModel)]="email" 
+    placeholder="Email"
+  >
+
+  <button 
+    class="btn-enviar" 
+    type="button"
+    (click)="enviarCodigo()"
+    [disabled]="carregando"
+  >
+    {{ carregando ? 'Enviando...' : 'Enviar Código' }}
+  </button>
+
+  <input 
+    [(ngModel)]="codigo" 
+    placeholder="Código"
+  >
+
+  <input 
+    [(ngModel)]="novaSenha" 
+    type="password"
+    placeholder="Nova senha"
+  >
+
+  <button 
+    class="btn-alterar" 
+    type="button"
+    (click)="redefinirSenha()"
+  >
+    Alterar Senha
+  </button>
+
+  <div 
+    *ngIf="mensagem.length > 0"
+    class="mensagem"
+    [class.sucesso]="tipoMensagem === 'sucesso'"
+    [class.erro]="tipoMensagem === 'erro'"
+  >
+    {{ mensagem }}
+  </div>
+</div>

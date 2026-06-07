@@ -1,7 +1,42 @@
-<div class='box'>
-    <h2>Login</h2><input [(ngModel)]='email' placeholder='Email'><input [(ngModel)]='senha' type='password'
-        placeholder='Senha'><button (click)='fazerLogin()'>Entrar</button>
-    <p class='erro'>{{mensagem}}</p>
-    <p>Não tem conta? <span routerLink='/cadastro'>Cadastre-se</span></p>
-    <p><span routerLink='/recupera'>Recuperar senha</span></p>
+<div class="box">
+  <h2>Login</h2>
+
+  <input 
+    [(ngModel)]="email" 
+    placeholder="Email"
+    type="email"
+  >
+
+  <input 
+    [(ngModel)]="senha" 
+    type="password"
+    placeholder="Senha"
+  >
+
+  <button 
+    type="button"
+    class="btn-login"
+    (click)="fazerLogin()"
+    [disabled]="carregando"
+  >
+    {{ carregando ? 'Entrando...' : 'Entrar' }}
+  </button>
+
+  <div
+    *ngIf="mensagem.length > 0"
+    class="mensagem"
+    [class.sucesso]="tipoMensagem === 'sucesso'"
+    [class.erro]="tipoMensagem === 'erro'"
+  >
+    {{ mensagem }}
+  </div>
+
+  <p class="texto-apoio">
+    Não tem conta?
+    <span routerLink="/cadastro">Cadastre-se</span>
+  </p>
+
+  <p class="texto-apoio">
+    <span routerLink="/recupera">Recuperar senha</span>
+  </p>
 </div>
