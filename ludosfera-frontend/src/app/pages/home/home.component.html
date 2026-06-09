@@ -1,91 +1,153 @@
 <main class="home-page">
-    <section class="hero">
-        <div class="hero-text"><span class="tag">✨ Diversão, estratégia e aventura</span>
-            <h2><span>A sua loja principal de jogos de tabuleiro</span></h2>
-            <p>Encontre jogos para comprar, descubra novidades, promoções e monte a experiência perfeita.</p>
-            <div class="hero-stats">
-                <div class="stat-card"><strong>+1.000 </strong><br><span>Clientes atendidos</span></div>
-                <div class="stat-card"><strong>Fácil </strong><br><span>Compra rápida e segura</span></div>
-            </div>
+  
+  <section class="hero">
+    <div class="hero-text">
+      <span class="tag">✨ Diversão, estratégia e aventura</span>
+      <h2><span>A sua loja principal de jogos de tabuleiro</span></h2>
+      <p>
+        Encontre jogos para comprar, descubra novidades,
+        promoções e monte a experiência perfeita para sua próxima partida.
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat-card">
+          <strong>+1.000</strong><br>
+          <span>Clientes atendidos</span>
         </div>
-        <div class="hero-visual">
-            <div class="floating-card card-1">♟️ Estratégia</div>
-            <div class="floating-card card-2">🎉 Party Games</div>
-            <div class="floating-card card-3">👨‍👩‍👧‍👦 Família</div>
-            <div class="d20-container">
-                <div class="d20-3d">
-                    <div class="d20-face front">1</div>
-                    <div class="d20-face back">2</div>
-                    <div class="d20-face right">3</div>
-                    <div class="d20-face left">4</div>
-                    <div class="d20-face top">5</div>
-                    <div class="d20-face bottom">6</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="search-box">
-  <h3>Encontre seu próximo jogo</h3>
-
-  <div class="search-area">
-    <div class="search-bar">
-      <input
-        [(ngModel)]="termoBusca"
-        (ngModelChange)="aoDigitarBusca()"
-        (keyup.enter)="buscar()"
-        (blur)="esconderSugestoesComDelay()"
-        placeholder="Ex: Catan, Dixit, Ticket to Ride..."
-      >
-
-      <button 
-        type="button" 
-        class="btn-search"
-        (click)="buscar()"
-      >
-        Buscar
-      </button>
-    </div>
-
-    <div 
-      class="sugestoes-box"
-      *ngIf="mostrandoSugestoes"
-    >
-      <div 
-        class="sugestao-item"
-        *ngFor="let jogo of sugestoes"
-        (mousedown)="abrirJogo(jogo)"
-      >
-        <div class="sugestao-info">
-          <strong>{{ jogo.nome }}</strong>
-          <span>{{ jogo.categoria }}</span>
-        </div>
-
-        <div class="sugestao-preco">
-          R$ {{ jogo.preco | number:'1.2-2' }}
+        <div class="stat-card">
+          <strong>Fácil</strong><br>
+          <span>Compra rápida e segura</span>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-    <section>
-        <div class="section-title">
-            <h3>Destaques da semana</h3>
+    <div class="hero-visual">
+      <div class="floating-card card-1">♟️ Estratégia</div>
+      <div class="floating-card card-2">🎉 Party Games</div>
+      <div class="floating-card card-3">👨‍👩‍👧‍👦 Família</div>
+
+      <div class="d20-container">
+        <div class="d20-3d">
+          <div class="d20-face front">1</div>
+          <div class="d20-face back">2</div>
+          <div class="d20-face right">3</div>
+          <div class="d20-face left">4</div>
+          <div class="d20-face top">5</div>
+          <div class="d20-face bottom">6</div>
         </div>
-        <div class="highlight-grid">
-            <article class="game-card"><span class="badge">TOP 1</span>
-                <h4>Catan</h4>
-                <p>Estratégia e trocas em uma ilha de desafios.</p><button class="btn-buy" routerLink="/jogo-detalhe/1">Ver jogo</button>
-            </article>
-            <article class="game-card"><span class="badge">HOT</span>
-                <h4>Dixit</h4>
-                <p>Arte e imaginação em uma experiência única.</p><button class="btn-buy" routerLink="/jogo-detalhe/2">Ver jogo</button>
-            </article>
-            <article class="game-card"><span class="badge">NEW</span>
-                <h4>Ticket to Ride</h4>
-                <p>Construa rotas pelo mapa.</p><button class="btn-buy" routerLink="/jogo-detalhe/3">Ver jogo</button>
-            </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="search-box">
+    <h3>Encontre seu próximo jogo</h3>
+
+    <div class="search-area">
+      <div class="search-bar">
+        <input
+          type="text"
+          [(ngModel)]="termoBusca"
+          (ngModelChange)="aoDigitarBusca()"
+          (keyup.enter)="buscar()"
+          (blur)="esconderSugestoesComDelay()"
+          placeholder="Ex: Catan, Dixit, Ticket to Ride..."
+        >
+
+        <button 
+          type="button" 
+          class="btn-search"
+          (click)="buscar()"
+        >
+          Buscar
+        </button>
+      </div>
+
+      <div class="sugestoes-box" *ngIf="mostrandoSugestoes">
+        <div 
+          class="sugestao-item"
+          *ngFor="let jogo of sugestoes"
+          (mousedown)="abrirJogo(jogo)"
+        >
+          <div class="sugestao-info">
+            <strong>{{ jogo.nome }}</strong>
+            <span>{{ jogo.categoria }}</span>
+          </div>
+
+          <div class="sugestao-preco">
+            R$ {{ jogo.preco | number:'1.2-2' }}
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="main-sections">
+    <div class="section-title">
+      <h3>Áreas principais</h3>
+      <p>
+        Encontre jogos para comprar, descubra novidades,
+        promoções e monte a experiência perfeita para sua próxima partida.
+      </p>
+    </div>
+
+    <div class="cards-grid">
+      <article class="feature-card" [routerLink]="['/jogos']" style="cursor: pointer;">
+        <div class="icon">🎮</div>
+        <h4>Jogos</h4>
+        <p>Catálogo completo com jogos por estilo e categoria.</p>
+      </article>
+
+      <article class="feature-card" [routerLink]="['/carrinho']" style="cursor: pointer;">
+        <div class="icon">🛒</div>
+        <h4>Carrinho</h4>
+        <p>Revise seus itens antes de finalizar a partida.</p>
+      </article>
+
+      <article class="feature-card" [routerLink]="['/cadastro']" style="cursor: pointer;">
+        <div class="icon">👤</div>
+        <h4>Portal</h4>
+        <p>Acompanhe pedidos, favoritos e seu perfil.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="highlights">
+    <div class="section-title">
+      <h3>Destaques da semana</h3>
+    </div>
+
+    <div class="highlight-grid">
+      <article class="game-card">
+        <span class="badge">TOP 1</span><br>
+        <h4>Catan</h4>
+        <p>Estratégia e trocas em uma ilha de desafios.</p>
+        <button type="button" class="btn-buy" [routerLink]="['/jogo-detalhe', 1]">Ver jogo</button>
+      </article>
+
+      <article class="game-card">
+        <span class="badge">HOT</span><br>
+        <h4>Dixit</h4>
+        <p>Arte e imaginação em uma experiência única.</p>
+        <button type="button" class="btn-buy" [routerLink]="['/jogo-detalhe', 2]">Ver jogo</button>
+      </article>
+
+      <article class="game-card">
+        <span class="badge">NEW</span><br>
+        <h4>Ticket to Ride</h4>
+        <p>Construa rotas e dispute caminhos pelo mapa.</p>
+        <button type="button" class="btn-buy" [routerLink]="['/jogo-detalhe', 3]">Ver jogo</button>
+      </article>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-box-pink">
+      <h3>Pronto para o próximo turno?</h3>
+      <div class="cta-actions">
+        <button type="button" class="btn primary" [routerLink]="['/jogos']" style="cursor: pointer;">Explorar jogos</button>
+        <button type="button" class="btn outline" [routerLink]="['/cadastro']" style="cursor: pointer;">Criar conta</button>
+      </div>
+    </div>
+  </section>
+
 </main>

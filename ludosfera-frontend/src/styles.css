@@ -1,9 +1,17 @@
 body {
-    margin: 0;
-    min-height: 100vh;
-    background: radial-gradient(circle at top, #262a70 0, #0f1021 45%, #070713 100%);
-    color: #fff;
-    font-family: Arial, sans-serif
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  
+  /* GRADIENTE NEON: Começa com o azul clássico do site no canto superior esquerdo 
+     e termina com um rosa beeeem suave e difuso no canto inferior direito */
+  background: linear-gradient(135deg, #0b0d1b 0%, #101428 50%, #1b1326 100%);
+  
+  /* Garante que o fundo não repita e cubra a tela toda mesmo se a página crescer */
+  background-attachment: fixed; 
+  background-size: cover;
+  
+  color: #ffffff;
 }
 
 button {

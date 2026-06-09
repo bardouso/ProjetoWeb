@@ -1,48 +1,58 @@
+:host {
+  display: block;
+}
+
 .home-page {
+  position: relative;
   min-height: 100vh;
   padding: 60px 5%;
+  box-sizing: border-box;
   max-width: 1300px;
   margin: 0 auto;
 }
 
-/* HERO */
+/* ==========================================================================
+   --- HERO SECTION ---
+   ========================================================================== */
 .hero {
   display: grid;
-  grid-template-columns: 1.2fr .8fr;
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 40px;
   align-items: center;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 
 .tag {
   display: inline-block;
+  margin-bottom: 20px;
   padding: 8px 12px;
+  background: rgba(0, 204, 255, 0.1);
   border: 1px solid #00CCFF;
-  color: #fff3b0;
-  background: rgba(0, 204, 255, .08);
+  color: #ffe59d;
   font-family: 'VT323', monospace;
   font-size: 1.2rem;
-  box-shadow: 0 0 12px rgba(0, 204, 255, .18);
+  text-transform: uppercase;
 }
 
 .hero-text h2 {
-  font-family: 'Press Start 2P';
+  font-family: 'Press Start 2P', cursive;
   font-size: 2rem;
   line-height: 1.4;
+  margin-bottom: 24px;
 }
 
 .hero-text h2 span {
   background: linear-gradient(90deg, #ff9de1, #7ad7ff);
   -webkit-background-clip: text;
-  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.hero-text p,
-.stat-card span,
-.game-card p {
-  font-family: 'VT323';
-  font-size: 1.4rem;
+.hero-text p {
+  font-family: 'VT323', monospace;
+  font-size: 1.5rem;
   color: #d8dcff;
+  margin-bottom: 32px;
 }
 
 .hero-stats {
@@ -50,271 +60,194 @@
   gap: 20px;
 }
 
-.stat-card,
-.game-card {
-  padding: 25px;
-  background: rgba(255, 255, 255, .05);
-  border: 2px solid rgba(255, 255, 255, .1);
-  border-radius: 15px;
+.stat-card {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  text-align: center;
 }
 
 .stat-card strong {
-  font-family: 'Press Start 2P';
+  display: block;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.9rem;
   color: #00CCFF;
+  margin-bottom: 8px;
 }
 
-/* ÁREA DO CUBO */
+.stat-card span {
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  color: #d8dcff;
+}
+
+/* ==========================================================================
+   --- CUBO D20 3D & CARDS FLUTUANTES ---
+   ========================================================================== */
 .hero-visual {
   position: relative;
-  height: 360px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* CUBO MAIS CENTRALIZADO E MENOS TORTO */
 .d20-container {
   perspective: 1000px;
-  width: 130px;
-  height: 130px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 120px;
+  height: 120px;
 }
 
 .d20-3d {
- 
-
-  width: 120px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  transform-origin: center center;
-  animation: rotateD20 14s infinite linear;
-  will-change: transform;
-
-
+  animation: rotateD20 15s infinite linear;
 }
 
-/* Faces do cubo */
 .d20-face {
   position: absolute;
   width: 120px;
   height: 120px;
-  background: rgba(0, 204, 255, .12);
+  background: rgba(0, 204, 255, 0.1);
   border: 2px solid #00CCFF;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Press Start 2P';
-  font-size: 1rem;
-  color: #ffffff;
-  text-shadow: 0 0 8px #00CCFF;
-  box-shadow: inset 0 0 20px rgba(0, 204, 255, .22),
-              0 0 14px rgba(0, 204, 255, .18);
-  backface-visibility: hidden;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+  color: #00CCFF;
+  backdrop-filter: blur(4px);
+  box-shadow: inset 0 0 20px rgba(0, 204, 255, 0.2);
 }
 
-/* Posições corretas das faces */
-.front {
-  transform: translateZ(60px);
-}
+.front  { transform: rotateY(0deg) translateZ(60px); }
+.back   { transform: rotateY(180deg) translateZ(60px); }
+.right  { transform: rotateY(90deg) translateZ(60px); }
+.left   { transform: rotateY(-90deg) translateZ(60px); }
+.top    { transform: rotateX(90deg) translateZ(60px); }
+.bottom { transform: rotateX(-90deg) translateZ(60px); }
 
-.back {
-  transform: rotateY(180deg) translateZ(60px);
-}
-
-.right {
-  transform: rotateY(90deg) translateZ(60px);
-}
-
-.left {
-  transform: rotateY(-90deg) translateZ(60px);
-}
-
-.top {
-  transform: rotateX(90deg) translateZ(60px);
-}
-
-.bottom {
-  transform: rotateX(-90deg) translateZ(60px);
-}
-
-/* Rotação mais estável */
 @keyframes rotateD20 {
- 
-  0% {
-    transform: rotateX(-18deg) rotateY(25deg) rotateZ(0deg);
-  }
-
-  20% {
-    transform: rotateX(28deg) rotateY(130deg) rotateZ(8deg);
-  }
-
-  40% {
-    transform: rotateX(-35deg) rotateY(245deg) rotateZ(-10deg);
-  }
-
-  60% {
-    transform: rotateX(22deg) rotateY(360deg) rotateZ(12deg);
-  }
-
-  80% {
-    transform: rotateX(-25deg) rotateY(500deg) rotateZ(-6deg);
-  }
-
-  100% {
-    transform: rotateX(-18deg) rotateY(745deg) rotateZ(0deg);
-  }
-
+  from { transform: rotateX(0deg) rotateY(0deg); }
+  to { transform: rotateX(360deg) rotateY(720deg); }
 }
 
-/* CARDS FLUTUANTES MAIS CLAROS */
 .floating-card {
   position: absolute;
   padding: 10px 15px;
-  background: rgba(15, 16, 33, .82);
-  border: 1px solid rgba(255, 255, 255, .22);
-  font-family: 'VT323';
-  font-size: 1.25rem;
+  background: rgba(15, 16, 33, 0.8);
+  border: 1px solid #ff4ecd;
   color: #ffffff;
-  border-radius: 10px;
-  letter-spacing: .5px;
-  text-shadow: 0 0 8px rgba(255, 255, 255, .45);
-  box-shadow: 0 0 16px rgba(0, 204, 255, .16);
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  z-index: 5;
 }
 
-/* Cores individuais */
-.card-1 {
-  top: 10%;
-  left: 0;
-  color: #bff4ff;
-  border-color: #00CCFF;
-  box-shadow: 0 0 18px rgba(0, 204, 255, .28);
+.card-1 { top: 10%; left: 0; animation: floatCard 4s infinite ease-in-out; }
+.card-2 { top: 30%; right: 0; animation: floatCard 5s infinite ease-in-out 0.5s; }
+.card-3 { bottom: 10%; left: 20%; animation: floatCard 4.5s infinite ease-in-out 1s; }
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
 
-.card-2 {
-  top: 26%;
-  right: -45px;
-  color: #ffd6f5;
-  border-color: #ff4ecd;
-  box-shadow: 0 0 18px rgba(255, 78, 205, .28);
-
-}
-
-.card-3 {
-  bottom: 10%;
-  left: 20%;
-  color: #fff1b8;
-  border-color: #ffe59d;
-  box-shadow: 0 0 18px rgba(255, 229, 157, .22);
-}
-
-/* BUSCA */
+/* ==========================================================================
+   --- SEÇÃO DE BUSCA NEON (MOLDURA INTEGRADA) ---
+   ========================================================================== */
 .search-box {
   padding: 40px;
-  background: rgba(15, 16, 33, .6);
+  background: rgba(15, 16, 33, 0.6);
   border: 2px solid #00CCFF;
   border-radius: 24px;
-  margin-bottom: 60px;
-  position: relative;
-  box-shadow: 0 0 20px rgba(0, 204, 255, .15);
+  backdrop-filter: blur(12px);
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.search-box h3,
-.section-title h3,
-.game-card h4 {
-  font-family: 'Press Start 2P';
-  color: #fff;
+.search-box h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  color: #ffffff;
+  margin: 0;
 }
 
+/* Container que une a barra e as sugestões */
 .search-area {
   position: relative;
   width: 100%;
 }
 
+/* Barra que gruda o Input no Botão */
 .search-bar {
   display: flex;
   width: 100%;
-  position: relative;
-  z-index: 5;
 }
 
 .search-bar input {
   flex: 1;
-  background: rgba(255, 255, 255, .05);
+  background: rgba(255, 255, 255, 0.05);
   border: 2px solid #00CCFF;
   border-right: none;
   border-radius: 12px 0 0 12px;
   padding: 18px 25px;
   color: white;
-  font-family: 'VT323';
+  font-family: 'VT323', monospace;
   font-size: 1.4rem;
   outline: none;
 }
 
-.search-bar input::placeholder {
-  color: rgba(255, 255, 255, .5);
-}
-
-.search-bar input:focus {
-  border-color: #ff4ecd;
-  box-shadow: 0 0 14px rgba(255, 78, 205, .3);
-}
-
-/* BOTÃO BUSCAR COM ANIMAÇÃO DE APERTAR */
-.search-bar button,
-.btn-buy {
+.search-bar .btn-search {
   background: #00CCFF;
   color: #0f1021;
-  border: 0;
+  border: 2px solid #00CCFF;
   border-radius: 0 12px 12px 0;
-  padding: 0 35px;
-  font-family: 'Press Start 2P';
-  font-size: .8rem;
+  padding: 0 40px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: all 0.3s ease;
 }
 
-.btn-search {
-  box-shadow: 0 6px 0 #0088aa;
-  transition: transform .15s ease, box-shadow .15s ease, background .25s ease, color .25s ease;
-}
-
-.btn-search:hover {
+.search-bar .btn-search:hover {
   background: #ff4ecd;
+  border-color: #ff4ecd;
   color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 0 #aa2277;
 }
 
-.btn-search:active {
-  transform: translateY(5px);
-  box-shadow: 0 1px 0 #006b88;
-}
-
-/* SUGESTÕES DA BUSCA */
+/* ==========================================================================
+   --- CAIXA DE SUGESTÕES (DROPDOWN DROPPING DOWN) ---
+   ========================================================================== */
 .sugestoes-box {
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%; /* Fixa perfeitamente na linha inferior da barra */
   left: 0;
-  right: 0;
-  z-index: 20;
-  background: rgba(15, 16, 33, .96);
-  border: 2px solid #00CCFF;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 0 22px rgba(0, 204, 255, .3);
-  backdrop-filter: blur(12px);
+  width: 100%; /* Casa milimetricamente com a largura da barra */
+  background: rgba(15, 16, 33, 0.98); /* Cobre os elementos de baixo */
+  border: 2px solid #ff4ecd; /* Moldura Rosa Neon */
+  border-radius: 0 0 12px 12px;
+  margin-top: 4px;
+  z-index: 999; /* Passa por cima da listagem de jogos sem empurrar o layout */
+  max-height: 280px;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(255, 78, 205, 0.4);
 }
 
 .sugestao-item {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 16px 20px;
+  align-items: center;
+  padding: 15px 25px;
+  border-bottom: 1px solid rgba(255, 78, 205, 0.2);
   cursor: pointer;
-  border-bottom: 1px solid rgba(255, 255, 255, .08);
-  transition: .25s ease;
+  transition: background 0.2s ease;
 }
 
 .sugestao-item:last-child {
@@ -322,110 +255,327 @@
 }
 
 .sugestao-item:hover {
-  background: rgba(0, 204, 255, .12);
-  transform: translateX(4px);
+  background: rgba(0, 204, 255, 0.15); /* Feedback visual em azul neon */
 }
 
 .sugestao-info {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
+  text-align: left;
 }
 
 .sugestao-info strong {
-  font-family: 'Press Start 2P';
-  font-size: .72rem;
-  color: #ffffff;
-  text-shadow: 2px 2px #ff4ecd;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  color: #00CCFF; /* Nome do jogo em Azul Neon */
 }
 
 .sugestao-info span {
-  font-family: 'VT323';
-  font-size: 1.15rem;
-  color: #d8dcff;
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  color: #b0b8ff;
 }
 
 .sugestao-preco {
-  font-family: 'VT323';
-  font-size: 1.4rem;
-  color: #22c55e;
-  white-space: nowrap;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.75rem;
+  color: #ff4ecd; /* Preço destacado em Rosa Neon */
 }
 
-/* DESTAQUES */
-.highlight-grid {
+.feature-card {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.08); /* Fundo sutilmente mais visível */
+  border: 2px solid rgba(0, 204, 255, 0.2); /* Moldura azul bem discreta */
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 204, 255, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.feature-card:hover {
+  border-color: rgba(0, 204, 255, 0.6); /* Acende ao passar o mouse */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 204, 255, 0.25);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.feature-card .icon {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 5px rgba(0, 204, 255, 0.4));
+}
+
+.feature-card h4 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.1rem;
+  color: #f1f3f9; /* Texto esbranquiçado de leitura nítida */
+  margin-top: 15px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 4px rgba(0, 204, 255, 0.3);
+}
+
+.feature-card p {
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  color: #ccd2ff; /* Tom claro e legível */
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   --- SEÇÃO DE DESTAQUES & GRIDS ---
+   ========================================================================== */
+.section-title h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.cards-grid, .highlight-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+  margin-bottom: 60px;
 }
 
+.game-card {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.game-card:hover {
+  border-color: #00CCFF;
+  transform: translateY(-5px);
+}
+
+.game-card h4 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.game-card p {
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  color: #d1d1d1;
+  line-height: 1.4;
+}
+
+/* Badges Retrô */
 .badge {
-  font-family: 'Press Start 2P';
-  background: #f00;
-  color: #fff;
+  display: inline-block;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  background-color: #ff0000;
+  color: #ffffff;
   padding: 8px 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 0px #800000;
 }
 
+/* Botão Ver Jogo Organizado estilo Pílula */
 .btn-buy {
-  border-radius: 12px;
-  padding: 15px;
-  margin-top: 10px;
-  box-shadow: 0 6px 0 #0088aa;
-  transition: transform .15s ease, box-shadow .15s ease, background .25s ease;
+  width: 100%;
+  max-width: 220px;
+  padding: 14px 28px;
+  margin-top: 20px;
+  background: #00CCFF;
+  color: #0f1021;
+  border: none;
+  border-radius: 50px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.75rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 204, 255, 0.3);
 }
 
 .btn-buy:hover {
   background: #ff4ecd;
   color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 0 #aa2277;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 78, 205, 0.5);
 }
 
-.btn-buy:active {
-  transform: translateY(5px);
-  box-shadow: 0 1px 0 #006b88;
+/* ==========================================================================
+   --- BOTÕES DA CHAMADA FINAL (CTA) ATUALIZADOS ---
+   ========================================================================== */
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 25px; /* Separação cirúrgica entre as pílulas */
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
-/* RESPONSIVO */
-@media(max-width:900px) {
-  .hero {
-    grid-template-columns: 1fr;
+.cta-actions .btn {
+  padding: 16px 35px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  border-radius: 50px; /* Formato pílula idêntico ao print */
+  cursor: pointer;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Botão Explorar Jogos - Rosa Neon Ativo */
+.cta-actions .btn.primary {
+  background-color: #ff4ecd;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 5px 20px rgba(255, 78, 205, 0.4);
+}
+
+.cta-actions .btn.primary:hover {
+  background-color: #00CCFF;
+  color: #0f1021;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 204, 255, 0.6);
+}
+
+/* Botão Criar Conta - Azul Neon Ativo */
+.cta-actions .btn.outline {
+  background-color: #00CCFF;
+  color: #0f1021;
+  border: none;
+  box-shadow: 0 5px 20px rgba(0, 204, 255, 0.4);
+}
+
+.cta-actions .btn.outline:hover {
+  background-color: #ff4ecd;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 78, 205, 0.6);
+}
+
+/* ==========================================================================
+   --- CTA SECTION (QUADRADO NEON COR DE ROSA) ---
+   ========================================================================== */
+.cta-section {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* Moldura quadrada tracejada com a identidade Rosa Neon do site */
+.cta-box-pink {
+  padding: 60px;
+  background: rgba(255, 78, 205, 0.03); /* Leve fundo rosado transparente */
+  border: 2px dashed #ff4ecd; /* Borda tracejada Rosa Neon */
+  border-radius: 20px; /* Mantém a quina levemente suavizada no padrão do site */
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 78, 205, 0.1); /* Brilho rosa suave em volta do quadrado */
+}
+
+.cta-box-pink h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.cta-actions .btn {
+  padding: 16px 35px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  border-radius: 50px;
+  cursor: pointer;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Botão Explorar Jogos - Rosa Neon Ativo */
+.cta-actions .btn.primary {
+  background-color: #ff4ecd;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 5px 20px rgba(255, 78, 205, 0.4);
+}
+
+.cta-actions .btn.primary:hover {
+  background-color: #00CCFF;
+  color: #0f1021;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 204, 255, 0.6);
+}
+
+/* Botão Criar Conta - Azul Neon Ativo */
+.cta-actions .btn.outline {
+  background-color: #00CCFF;
+  color: #0f1021;
+  border: none;
+  box-shadow: 0 5px 20px rgba(0, 204, 255, 0.4);
+}
+
+.cta-actions .btn.outline:hover {
+  background-color: #ff4ecd;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 78, 205, 0.6);
+}
+
+/* ==========================================================================
+   --- RESPONSIVIDADE EM DISPOSITIVOS MÓVEIS ---
+   ========================================================================== */
+@media (max-width: 992px) {
+  .hero { grid-template-columns: 1fr; text-align: center; }
+  .hero-stats { justify-content: center; }
+  .hero-visual { height: 300px; }
+}
+
+@media (max-width: 768px) {
+  .hero-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .stat-card {
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
     text-align: center;
   }
 
-  .hero-stats {
-    justify-content: center;
+  .hero-text h2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
   }
 
   .search-bar {
     flex-direction: column;
+    gap: 10px;
   }
 
-  .search-bar input,
-  .search-bar button {
+  .search-bar input {
     border-radius: 12px;
-    margin: 4px 0;
+    border-right: 2px solid #00CCFF;
+  }
+
+  .search-bar .btn-search {
+    border-radius: 12px;
     padding: 15px;
-    border: 2px solid #00CCFF;
-  }
-
-  .sugestoes-box {
-    top: calc(100% + 10px);
-  }
-
-  .hero-visual {
-    height: 320px;
-  }
-
-  .card-1 {
-    left: 5%;
-  }
-
-  .card-2 {
-    right: 5%;
-  }
-
-  .card-3 {
-    left: 25%;
+    width: 100%;
   }
 }
