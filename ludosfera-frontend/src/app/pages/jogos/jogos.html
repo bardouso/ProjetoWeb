@@ -1,20 +1,38 @@
+<div class="neon-title-container">
+  <span class="neon-dash">--------------------------------------</span>
+  <h2 class="neon-text-red">Jogos</h2>
+  <span class="neon-dash">--------------------------------------</span>
+</div>
+
 <div class="container mt-5">
     <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-6 mb-5" *ngFor="let obj of lista">
             <div class="product-card">
-                <div class="img-wrapper"><img [src]="obj.fotos[0] || 'Imagens dos Jogos/sem-foto.png'"
-                        class="img-fluid"></div>
+                
+                <div class="img-wrapper">
+                    <img [src]="'Imagens dos Jogos/' + obj.nome + '/' + (obj.fotos && obj.fotos[0] ? obj.fotos[0] : '1.jpg')"
+                         (error)="$any($event.target).src = 'https://placehold.co/300x320/101428/00CCFF?text=Sem+Imagem'"
+                         class="img-fluid"
+                         [alt]="obj.nome">
+                </div>        
+                
                 <div class="product-info">
                     <h5 class="product-title">{{obj.nome}}</h5>
+                    
                     <div class="price-and-button-row">
-                        <div><span class="price-main">R${{obj.preco | number:'1.2-2'}}</span>
-                            <div class="player-info"><span
-                                    class="player-count">{{obj.minJogadores}}-{{obj.maxJogadores}} P</span></div>
-                        </div><button class="btn-buy" [routerLink]="['/jogo-detalhe', obj.id]"><span
-                                class="btn-text">DETALHES</span><span class="btn-icon">+</span></button>
+                        <div>
+                            <span class="price-main">R${{obj.preco | number:'1.2-2'}}</span>
+                            <div class="player-info">
+                                <span class="player-count">{{obj.minJogadores}}-{{obj.maxJogadores}} P</span>
+                            </div>
+                        </div>
+                        
+                        <button class="btn-buy" [routerLink]="['/jogo-detalhe', obj.id]">
+                            <span class="btn-text">DETALHES</span>
+                            <span class="btn-icon">+</span>
+                        </button>
                     </div>
-                </div>
-            </div>
+                </div> </div>
         </div>
     </div>
 </div>

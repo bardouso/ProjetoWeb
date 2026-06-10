@@ -1,13 +1,30 @@
-<header class="topbar">
-    <div class="brand" routerLink="/home">
-        <div class="logo"><img src="Logo_LudosFera.png" alt="Logo Ludosfera"></div>
-        <div class="brand-text">
-            <h1>Ludosfera</h1>
-            <p>Loja de jogos de tabuleiro</p>
-        </div>
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+  <div class="container-fluid d-flex flex-wrap align-items-center justify-content-between">
+    
+    <a class="navbar-brand d-flex align-items-center brand-container" routerLink="/">
+      <img src="assets/Logo_LudosFera.png" alt="Ludosfera Logo" class="navbar-logo me-2">
+      <div class="brand-text">
+        <span class="logo-title">LUDOSFERA</span>
+        <span class="logo-sub">Loja de jogos de tabuleiro</span>
+      </div>
+    </a>
+
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLudosfera" aria-controls="navbarLudosfera" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarLudosfera">
+      <div class="navbar-nav ms-auto align-items-center text-center w-100-mobile">
+        <a class="nav-link" routerLink="/inicio" routerLinkActive="active">Início</a>
+        <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+        <a class="nav-link" routerLink="/jogos" routerLinkActive="active">Jogos</a>
+        <a class="nav-link" routerLink="/portal" routerLinkActive="active">Portal do Cliente</a>
+        
+        <a class="nav-link btn-carrinho-nav ms-lg-3" routerLink="/carrinho" routerLinkActive="active">
+          🛒 Carrinho
+        </a>
+      </div>
     </div>
-    <nav class="menu"><button routerLink="/home">Início</button><button *ngIf="!estaLogado()"
-            routerLink="/login">Login</button><button routerLink="/jogos">Jogos</button><button
-            routerLink="/cadastro">Portal do Cliente</button><button class="cart-button" routerLink="/carrinho">🛒
-            Carrinho</button><button *ngIf="estaLogado()" (click)="logout()">Logout</button></nav>
-</header>
+
+  </div>
+</nav>

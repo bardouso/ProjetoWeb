@@ -17,16 +17,22 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets",
+              "src/assets/Ludos.ico"
             ],
             "styles": [
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "optimization": {
+              "scripts": true,
+              "styles": {
+                "minify": true,
+                "inlineCritical": false
+              }
+            }
           }
         },
         "serve": {
@@ -39,6 +45,9 @@
     }
   },
   "cli": {
-    "analytics": "74eb6d76-a9f6-4e09-ada3-ec120e40010a"
+    "analytics": "74eb6d76-a9f6-4e09-ada3-ec120e40010a",
+    "cache": {
+      "enabled": false
+    }
   }
 }
