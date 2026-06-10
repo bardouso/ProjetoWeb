@@ -1,11 +1,28 @@
-<div class='box'>
+<div class="box">
     <h2>Finalizar Compra</h2>
-    <div *ngFor='let i of lista'>{{i.produto.nome}} - {{i.quantidade}}x - R$ {{i.produto.preco*i.quantidade}}</div>
-    <h3>Total: R$ {{total}}</h3><input [(ngModel)]='nomeCliente' placeholder='Nome'><input [(ngModel)]='emailCliente'
-        placeholder='Email'><textarea [(ngModel)]='enderecoEntrega' placeholder='Endereço'></textarea><select
-        [(ngModel)]='formaPagamento'>
-        <option>Pix</option>
-        <option>Cartão</option>
-        <option>Boleto</option>
-    </select><button (click)='finalizar()'>Confirmar Pedido</button>
+    
+    <div class="resumo-pedido">
+        <div *ngFor="let i of lista" class="item-linha">
+            <span class="item-nome">👾 {{i.produto.nome}}</span>
+            <span class="item-qtd">{{i.quantidade}}x</span>
+            <span class="item-preco">R$ {{i.produto.preco * i.quantidade | number:'1.2-2'}}</span>
+        </div>
+    </div>
+    
+    <h3 class="total-pedido">Total: <span class="total-valor">R$ {{total | number:'1.2-2'}}</span></h3>
+
+    <input [(ngModel)]="nomeCliente" placeholder="Nome">
+    <input [(ngModel)]="emailCliente" placeholder="Email">
+    <textarea [(ngModel)]="enderecoEntrega" placeholder="Endereço"></textarea>
+
+    <div class="custom-select-wrapper">
+        <select [(ngModel)]="formaPagamento" class="custom-select">
+            <option value="Pix">⚡ Pix</option>
+            <option value="Cartão">💳 Cartão</option>
+            <option value="Boleto">📄 Boleto</option>
+        </select>
+        <div class="custom-select-arrow"></div>
+    </div>
+
+    <button (click)="finalizar()">Confirmar Pedido</button>
 </div>

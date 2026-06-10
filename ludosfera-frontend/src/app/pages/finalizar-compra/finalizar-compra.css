@@ -1,47 +1,186 @@
 .box {
-    max-width: 500px;
-    margin: 60px auto;
-    padding: 40px;
-    border-radius: 24px;
-    background: rgba(255, 255, 255, .05);
-    border: 1px solid rgba(255, 255, 255, .15)
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 40px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, .05);
+  border: 1px solid rgba(255, 255, 255, .15);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .3);
+  backdrop-filter: blur(12px);
+  box-sizing: border-box;
 }
 
 h2 {
-    font-family: 'Press Start 2P';
-    font-size: 1.2rem;
-    text-align: center
+  font-family: 'Press Start 2P';
+  font-size: 1.2rem;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 28px;
+  text-shadow: 2px 2px #ff4ecd;
 }
 
+/* --- 🌟 NOVO: ESTILIZAÇÃO DO LISTAR PRODUTOS (LETRAS ACESAS) --- */
+.resumo-pedido {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px dashed rgba(0, 204, 255, 0.3);
+}
+
+.item-linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: 'VT323', monospace;
+  font-size: 1.3rem;
+  color: #ffffff; /* Letras brancas nítidas */
+}
+
+.item-linha:last-child {
+  border-bottom: none;
+}
+
+.item-qtd {
+  color: #ff4ecd;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.65rem;
+}
+
+.item-preco {
+  color: #00CCFF;
+}
+
+/* --- 🌟 NOVO: ESTILIZAÇÃO DO TOTAL --- */
+.total-pedido {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+  margin: 20px 0 25px;
+}
+
+.total-valor {
+  color: #ff4ecd !important;
+  text-shadow: 0 0 8px rgba(255, 78, 205, 0.6);
+}
+
+/* --- FORMULÁRIO (INPUTS E TEXTAREA) --- */
 input,
 textarea {
-    width: 100%;
-    margin: 10px 0;
-    padding: 14px;
-    background: rgba(255, 255, 255, .1);
-    border: 2px solid #00CCFF;
-    border-radius: 12px;
-    color: white;
-    font-family: 'VT323';
-    font-size: 1.2rem
+  width: 100%;
+  box-sizing: border-box;
+  margin: 10px 0;
+  padding: 14px;
+  background: rgba(255, 255, 255, .1);
+  border: 2px solid #00CCFF;
+  border-radius: 12px;
+  color: white;
+  font-family: 'VT323';
+  font-size: 1.25rem;
+  outline: none;
+  transition: .3s ease;
 }
 
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, .55);
+}
+
+input:focus,
+textarea:focus {
+  border-color: #ff4ecd;
+  box-shadow: 0 0 15px rgba(255, 78, 205, .4);
+  background: rgba(255, 255, 255, .15);
+}
+
+/* --- 🌟 NOVO: SEU SELECT DO PIX ESTILIZADO EM CASCATA RETRÔ --- */
+.custom-select-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 10px 0 20px;
+}
+
+.custom-select {
+  width: 100%;
+  padding: 14px;
+  background: rgba(255, 255, 255, .1);
+  border: 2px solid #00CCFF;
+  border-radius: 12px;
+  color: white;
+  font-family: 'VT323';
+  font-size: 1.25rem;
+  outline: none;
+  cursor: pointer;
+  appearance: none; /* Esconde a setinha padrão do Windows */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: .3s ease;
+}
+
+.custom-select option {
+  background: #191b2a; /* Fundo escuro para a caixa de opções */
+  color: white;
+}
+
+.custom-select:focus {
+  border-color: #ff4ecd;
+  box-shadow: 0 0 15px rgba(255, 78, 205, .4);
+}
+
+/* Setinha customizada integrada ao layout */
+.custom-select-arrow {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 7px solid #00CCFF;
+  pointer-events: none;
+}
+
+.custom-select:focus + .custom-select-arrow {
+  border-top-color: #ff4ecd;
+}
+
+/* --- BOTÃO CONFIRMAR --- */
 button {
-    width: 100%;
-    padding: 15px;
-    background: #00CCFF;
-    border: 0;
-    border-radius: 12px;
-    font-family: 'Press Start 2P'
+  width: 100%;
+  padding: 15px;
+  margin: 12px 0 8px;
+  background: #00CCFF;
+  color: #0f1021;
+  border: 0;
+  border-radius: 12px;
+  font-family: 'Press Start 2P';
+  font-size: .75rem;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #0088aa;
+  transition: transform .15s ease, box-shadow .15s ease, background .25s ease, color .25s ease;
 }
 
-p {
-    font-family: 'VT323';
-    font-size: 1.2rem;
-    text-align: center
+button:hover {
+  background: #ff4ecd;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #aa2277;
 }
 
-span {
-    color: #00CCFF;
-    cursor: pointer
+button:active {
+  transform: translateY(5px);
+  box-shadow: 0 1px 0 #006b88;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 576px) {
+  .box {
+    margin: 20px auto;
+    padding: 25px 20px;
+    width: 92%;
+  }
 }
