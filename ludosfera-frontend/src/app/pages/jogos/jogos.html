@@ -10,12 +10,12 @@
             <div class="product-card">
                 
                 <div class="img-wrapper">
-                    <img [src]="'Imagens dos Jogos/' + obj.nome + '/' + (obj.fotos && obj.fotos[0] ? obj.fotos[0] : '1.jpg')"
-                         (error)="$any($event.target).src = 'https://placehold.co/300x320/101428/00CCFF?text=Sem+Imagem'"
-                         class="img-fluid"
-                         [alt]="obj.nome">
-                </div>        
-                
+                    <img [src]="obj.fotos && obj.fotos[0] ? obj.fotos[0] : 'Imagens dos Jogos/Sem_Imagem.jpg'"
+                        (error)="$any($event.target).src = 'https://placehold.co/300x320/101428/00CCFF?text=Sem+Imagem'"
+                        class="img-fluid"
+                        [alt]="obj.nome">
+                </div>
+                                
                 <div class="product-info">
                     <h5 class="product-title">{{obj.nome}}</h5>
                     

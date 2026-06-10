@@ -8,22 +8,20 @@
   box-sizing: border-box;
 }
 
-/* 🎯 ESTRUTURA DO LOGIN COM BORDA VERMELHA */
+/* 🎯 ESTRUTURA DO CARD COM BORDA NEON VERMELHA */
 .carrinho-container {
   width: 100%;
-  max-width: 500px; /* Mantém compacto igual ao login */
-  background: #1e2237; /* Mesma cor de fundo do login */
-  
-  /* 🔴 A ALTERAÇÃO: Linha fina 1px sólida e Vermelha */
-  border: 1px solid #ff4e4e; 
-  
+  max-width: 750px; /* 🚀 AUMENTADO: De 500px para 750px para dar o formato comprido perfeito horizontal */
+  background: #1e2237;
+  border: 1px solid #ff4e4e; /* Linha fina vermelha mantida */
   border-radius: 24px;
   padding: 45px 40px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .4);
+  backdrop-filter: blur(12px);
   box-sizing: border-box;
-  text-align: center;
 }
 
-/* 💗 TÍTULO: Sem forçar tudo maiúsculo, mantendo o efeito do Login */
+/* 💗 TÍTULO: Mantendo o efeito idêntico ao do seu Login */
 h2 {
   font-family: 'Press Start 2P', cursive;
   font-size: 1.8rem;
@@ -31,24 +29,21 @@ h2 {
   color: #ffffff;
   margin-top: 0;
   margin-bottom: 40px;
-  
-  /* 🚀 REMOVIDO o text-transform para aceitar "Seu Carrinho" */
-  
-  /* Sombra rosa projetada idêntica ao print */
   text-shadow: 2px 2px 0px #ff4ecd; 
 }
 
-/* Texto de alerta em vermelho */
+/* 🚨 ESTÁGIO 1: Texto de alerta em vermelho quando não possui nada */
 .alerta-vazio {
   font-family: 'VT323', monospace;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   text-align: center;
   color: #ff4e4e;
-  margin: 20px 0;
+  margin: 40px 0;
+  text-shadow: 0 0 10px rgba(255, 78, 78, 0.2);
 }
 
 /* ==========================================================================
-   --- ELEMENTOS DA TABELA E BOTÕES ---
+   --- ESTÁGIO 2: ELEMENTOS DA TABELA QUANDO POSSUI ITENS ---
    ========================================================================== */
 table {
   width: 100%;
@@ -56,52 +51,128 @@ table {
   font-size: 1.4rem;
   color: white;
   border-collapse: collapse;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  table-layout: fixed; /* 🚀 Força as colunas a respeitarem larguras proporcionais */
 }
 
+/* Distribuição inteligente de espaço para o texto respirar */
+th:nth-child(1), td:nth-child(1) { width: 30%; text-align: left; }  /* Produto */
+th:nth-child(2), td:nth-child(2) { width: 30%; text-align: center; }/* Qtd */
+th:nth-child(3), td:nth-child(3) { width: 15%; text-align: center; }/* Subtotal */
+th:nth-child(4), td:nth-child(4) { width: 25%; text-align: center; }/* Ações */
+
 td, th {
-  padding: 12px 6px;
+  padding: 16px 8px;
+  vertical-align: middle;
 }
 
 th {
   color: #00CCFF;
   font-family: 'Press Start 2P', cursive;
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   border-bottom: 2px solid rgba(0, 204, 255, 0.2);
   padding-bottom: 15px;
+  text-transform: uppercase;
 }
 
 td {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  white-space: nowrap; /* 🚀 Evita que o nome do jogo quebre em duas linhas */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+/* --- 🕹️ ESTILIZAÇÃO DOS BOTÕES (IGUAL AO SEU LOGIN COM CLIQUE 3D) --- */
 button {
   background: #00CCFF;
   color: #0f1021;
   border: 0;
   border-radius: 8px;
-  padding: 10px 14px;
+  padding: 10px 16px;
   margin: 4px;
   font-family: 'Press Start 2P', cursive;
   font-size: .6rem;
   cursor: pointer;
   text-transform: uppercase;
-  transition: all 0.2s ease;
+  box-shadow: 0 4px 0 #0088aa; /* Sombra 3D de fliperama */
+  transition: transform .1s ease, box-shadow .1s ease, background .2s ease;
 }
 
 button:hover {
   background: #ff4ecd;
   color: #ffffff;
+  box-shadow: 0 5px 0 #aa2277;
 }
 
+button:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #aa2277;
+}
+
+/* Rodapé do carrinho contendo o Total */
 .footer-carrinho {
   text-align: right;
-  margin-top: 25px;
+  margin-top: 30px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
 }
 
 .footer-carrinho h3 {
   font-family: 'Press Start 2P', cursive;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #ffffff;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+/* Estilo para os botões inferiores (LIMPAR e FINALIZAR) ficarem juntos à direita */
+.acoes-carrinho-fim {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Customização opcional para o botão LIMPAR ficar mais discreto */
+button.btn-limpar {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  box-shadow: 0 4px 0 rgba(255, 255, 255, 0.15);
+}
+button.btn-limpar:hover {
+  background: #ff4e4e;
+  box-shadow: 0 5px 0 #aa2222;
+}
+
+/* ==========================================================================
+   --- 📱 RESPONSIVIDADE COMPLETA PARA CELULAR ---
+   ========================================================================== */
+@media (max-width: 768px) {
+  .carrinho-container {
+    padding: 30px 15px;
+    width: 95%;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+  }
+
+  /* Faz a tabela criar scroll horizontal automático no celular para não amassar */
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Ajusta os botões finais de ação para empilharem perfeitamente no mobile */
+  .acoes-carrinho-fim {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .acoes-carrinho-fim button {
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
 }
