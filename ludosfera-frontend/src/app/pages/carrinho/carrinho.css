@@ -1,52 +1,107 @@
+/* Container que centraliza o card na tela */
 .carrinho-page {
-    padding: 40px 20px;
-    min-height: 80vh
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  min-height: 80vh;
+  box-sizing: border-box;
 }
 
+/* 🎯 ESTRUTURA DO LOGIN COM BORDA VERMELHA */
 .carrinho-container {
-    max-width: 1000px;
-    margin: auto;
-    background: rgba(255, 255, 255, .05);
-    border: 1px solid rgba(255, 255, 255, .15);
-    border-radius: 24px;
-    padding: 40px
+  width: 100%;
+  max-width: 500px; /* Mantém compacto igual ao login */
+  background: #1e2237; /* Mesma cor de fundo do login */
+  
+  /* 🔴 A ALTERAÇÃO: Linha fina 1px sólida e Vermelha */
+  border: 1px solid #ff4e4e; 
+  
+  border-radius: 24px;
+  padding: 45px 40px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
+/* 💗 TÍTULO: Sem forçar tudo maiúsculo, mantendo o efeito do Login */
 h2 {
-    font-family: 'Press Start 2P';
-    text-align: center;
-    text-shadow: 2px 2px #ff4ecd
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.8rem;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 40px;
+  
+  /* 🚀 REMOVIDO o text-transform para aceitar "Seu Carrinho" */
+  
+  /* Sombra rosa projetada idêntica ao print */
+  text-shadow: 2px 2px 0px #ff4ecd; 
 }
 
+/* Texto de alerta em vermelho */
+.alerta-vazio {
+  font-family: 'VT323', monospace;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #ff4e4e;
+  margin: 20px 0;
+}
+
+/* ==========================================================================
+   --- ELEMENTOS DA TABELA E BOTÕES ---
+   ========================================================================== */
 table {
-    width: 100%;
-    font-family: 'VT323';
-    font-size: 1.4rem;
-    color: white
+  width: 100%;
+  font-family: 'VT323', monospace;
+  font-size: 1.4rem;
+  color: white;
+  border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
-td,
+td, th {
+  padding: 12px 6px;
+}
+
 th {
-    padding: 14px
+  color: #00CCFF;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.65rem;
+  border-bottom: 2px solid rgba(0, 204, 255, 0.2);
+  padding-bottom: 15px;
+}
+
+td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 button {
-    background: #00CCFF;
-    border: 0;
-    border-radius: 8px;
-    padding: 10px;
-    margin: 4px;
-    font-family: 'Press Start 2P';
-    font-size: .6rem
+  background: #00CCFF;
+  color: #0f1021;
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 4px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: .6rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: #ff4ecd;
+  color: #ffffff;
 }
 
 .footer-carrinho {
-    text-align: right
+  text-align: right;
+  margin-top: 25px;
 }
 
-.alerta-vazio {
-    font-family: 'VT323';
-    font-size: 1.5rem;
-    text-align: center;
-    color: #ff4e4e
+.footer-carrinho h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-bottom: 15px;
 }

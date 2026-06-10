@@ -1,38 +1,75 @@
+/* ==========================================================================
+   --- LUDOSFERA: ESTILOS GLOBAIS DO SISTEMA ---
+   ========================================================================== */
+
+/* Importação das fontes retrô oficiais do Google */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Garante que paddings não estourem a largura de nada */
+}
+
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
   
-  /* GRADIENTE NEON: Começa com o azul clássico do site no canto superior esquerdo 
-     e termina com um rosa beeeem suave e difuso no canto inferior direito */
+  /* GRADIENTE NEON: Tira o preto absoluto e coloca a atmosfera do site antigo */
   background: linear-gradient(135deg, #0b0d1b 0%, #101428 50%, #1b1326 100%);
-  
-  /* Garante que o fundo não repita e cubra a tela toda mesmo se a página crescer */
   background-attachment: fixed; 
   background-size: cover;
   
   color: #ffffff;
+  font-family: 'VT323', monospace; /* Fonte padrão do site */
+  overflow-x: hidden; /* Evita barras de rolagem horizontais fantasmas */
 }
 
-button {
-    cursor: pointer
+/* Scrollbar personalizada estilo Arcade (Opcional - dá um charme retro) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0f1021;
+}
+::-webkit-scrollbar-thumb {
+  background: #00CCFF;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff4ecd;
 }
 
-.btn {
-    border: none;
-    border-radius: 12px;
-    padding: 14px 20px;
-    font-family: 'Press Start 2P', cursive;
-    font-size: .7rem
+/* ==========================================================================
+   --- RESPONSIVIDADE GLOBAL DE FONTES E ESPAÇAMENTOS ---
+   ========================================================================== */
+
+/* Para tablets e celulares (telas menores que 768px) */
+@media (max-width: 768px) {
+  /* Encolhe os títulos pixelados principais */
+  h2, .neon-title-container h2 {
+    font-size: 1.4rem !important; 
+    margin-bottom: 20px !important;
+  }
+  
+  /* Diminui os traços neon decorativos se ficarem gigantes */
+  .neon-dash {
+    letter-spacing: -2px;
+    font-size: 0.8rem;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 }
 
-.primary {
-    background: #00CCFF;
-    color: #0f1021
-}
-
-.outline {
-    background: transparent;
-    color: #fff;
-    border: 2px solid #00CCFF
+/* Para celulares pequenos (telas menores que 480px) */
+@media (max-width: 480px) {
+  h2, .neon-title-container h2 {
+    font-size: 1.1rem !important;
+  }
+  
+  body {
+    padding: 10px; /* Evita que o conteúdo cole na borda física do aparelho */
+  }
 }

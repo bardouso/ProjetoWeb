@@ -361,7 +361,7 @@
 .game-card p {
   font-family: 'VT323', monospace;
   font-size: 1.2rem;
-  color: #d1d1d1;
+  color: #ccd2ff;
   line-height: 1.4;
 }
 
@@ -578,4 +578,14 @@
     padding: 15px;
     width: 100%;
   }
+}
+
+/* 🚀 CAÇA-PARÁGRAFO: Altera a cor do texto na marra direto no CSS */
+.home-page div p,
+.main-sections div p,
+.section-title p {
+  color: #ccd2ff !important;
+  opacity: 1 !important;
+  font-family: 'VT323', monospace !important;
+  font-size: 1.4rem !important;
 }
